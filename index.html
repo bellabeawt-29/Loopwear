@@ -2,9 +2,9 @@
 <html lang="th">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Loopwear</title>
-<meta name="claude:viewport-fit-sides" content="cover">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mitr:wght@400;500&family=Sarabun:wght@400;500;600&display=swap">
@@ -446,6 +446,226 @@ button { font: inherit; color: inherit; }
   .btn, .pcard { transition: none; }
   .pcard:hover { transform: none; }
 }
+
+/* ================= v2 additions ================= */
+:root { --danger: #B3304A; }
+.art img { display: block; }
+.art.tall { aspect-ratio: 4 / 5; }
+.art.rentp { aspect-ratio: 3 / 4; }
+.art.rentp img { object-position: 50% 15%; }
+.art.fit { background: var(--cream-deep); }
+.art.fit img { object-fit: contain; }
+@media (min-width: 1100px) { .pgrid.six { grid-template-columns: repeat(6, minmax(0, 1fr)); } }
+.btn-sm { padding: .42rem 1.1rem; font-size: .92rem; }
+.btn[disabled] { opacity: .55; cursor: default; }
+.btn[disabled]:hover { background: none; }
+.btn-primary[disabled]:hover { background: var(--blue-strong); }
+.tlink { background: none; border: 0; padding: 0; color: var(--blue-strong); text-decoration: underline; cursor: pointer; font: inherit; }
+.ext { color: var(--blue-strong); text-decoration: underline; }
+.fcols button { background: none; border: 0; padding: 0; color: var(--ink-soft); font: inherit; font-size: .96rem; cursor: pointer; text-align: left; }
+.fcols button:hover { color: var(--blue-strong); text-decoration: underline; }
+.hauth { display: flex; align-items: center; flex: none; }
+.avatar-btn { width: 44px; height: 44px; border-radius: 50%; background: var(--sky-deep); color: var(--blue-strong); font-family: var(--font-display); font-size: 1.2rem; display: grid; place-items: center; text-decoration: none; }
+.avatar-btn:hover { background: var(--blue-strong); color: var(--white); }
+
+/* auth pages */
+.on-auth { padding-bottom: 0; }
+.on-auth .hbar .search, .on-auth .hbar .iconbtn, .on-auth .catnav, .on-auth .tabbar, .on-auth .strip ul { display: none; }
+.auth-wrap { display: grid; gap: 24px; padding-block: 24px 56px; }
+@media (min-width: 900px) { .auth-wrap { grid-template-columns: minmax(0, 1fr) minmax(0, 480px); gap: 48px; align-items: center; padding-block: 52px 80px; } }
+.auth-card { order: -1; background: var(--white); border: 1px solid var(--line); border-radius: 28px; padding: clamp(20px, 4vw, 34px); box-shadow: 0 18px 44px rgba(56, 99, 153, .12); min-width: 0; }
+@media (min-width: 900px) { .auth-card { order: 0; } }
+.auth-side { background: var(--sky); border-radius: 32px; padding: clamp(24px, 4vw, 44px); display: grid; gap: 18px; align-content: center; min-width: 0; }
+.auth-side .mark { width: 92px; }
+.auth-side h1 { font-size: clamp(1.7rem, 4.5vw, 2.6rem); }
+.auth-side h1 em { font-style: normal; color: var(--blue-strong); }
+.auth-side ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.auth-side li { display: flex; gap: 12px; align-items: flex-start; color: var(--ink-soft); }
+.auth-side li .i { color: var(--blue-strong); margin-top: 3px; }
+.authtabs { display: flex; background: var(--sky); border-radius: 999px; padding: 4px; margin-bottom: 22px; }
+.authtabs a { flex: 1; text-align: center; text-decoration: none; padding: .45rem 1rem; border-radius: 999px; font-family: var(--font-display); color: var(--ink-soft); }
+.authtabs a[aria-current="page"] { background: var(--blue-strong); color: var(--white); }
+.fld { display: grid; gap: 6px; min-width: 0; }
+.fld label { font-family: var(--font-display); font-size: .95rem; }
+.fld input[type="text"], .fld input[type="email"], .fld input[type="password"], .fld input[type="number"], .fld select { width: 100%; min-width: 0; border: 1.5px solid var(--line); border-radius: 12px; padding: .6rem .85rem; font: inherit; background: var(--cream); color: var(--ink); }
+.fld input:focus, .fld select:focus { border-color: var(--blue-strong); outline: 0; }
+.fld input[aria-invalid="true"] { border-color: var(--danger); }
+.hint { font-size: .86rem; color: var(--ink-soft); }
+.err { color: var(--danger); font-size: .9rem; line-height: 1.5; }
+.err:empty { display: none; }
+.fgrid { display: grid; gap: 16px; }
+.consent { background: var(--sky); border-radius: 18px; padding: 14px 16px; display: grid; gap: 12px; }
+.chk { display: flex; gap: 10px; align-items: flex-start; font-size: .95rem; line-height: 1.55; cursor: pointer; }
+.chk input { width: 20px; height: 20px; margin-top: 3px; accent-color: var(--blue-strong); flex: none; }
+.divider { display: flex; align-items: center; gap: 12px; color: var(--ink-soft); font-size: .9rem; margin: 18px 0; }
+.divider::before, .divider::after { content: ""; flex: 1; border-top: 1px solid var(--line); }
+
+/* modal */
+.mback { position: fixed; inset: 0; z-index: 90; background: rgba(29, 49, 80, .55); display: grid; place-items: center; padding: 16px; padding-top: max(16px, env(safe-area-inset-top, 0px)); padding-bottom: max(16px, env(safe-area-inset-bottom, 0px)); }
+.mback[hidden] { display: none; }
+.modal { position: relative; width: min(100%, 600px); max-height: 100%; overflow: auto; background: var(--cream); border-radius: 28px; padding: clamp(20px, 4vw, 32px); box-shadow: 0 30px 80px rgba(29, 49, 80, .35); }
+.mclose { position: absolute; right: 14px; top: 14px; width: 40px; height: 40px; border-radius: 50%; border: 0; background: var(--sky); color: var(--blue-strong); display: grid; place-items: center; cursor: pointer; }
+.mclose:hover { background: var(--sky-deep); }
+.modal h2 { font-size: 1.5rem; padding-right: 46px; }
+.modal .lead2 { color: var(--ink-soft); margin-top: 6px; }
+.policy h3 { font-size: 1.05rem; margin: 18px 0 6px; }
+.policy ul { margin: 0; padding-left: 1.2em; color: var(--ink-soft); }
+.policy p { color: var(--ink-soft); }
+.policy .draft { background: var(--warn-bg); color: var(--warn-ink); border-radius: 14px; padding: 10px 14px; font-size: .9rem; margin-top: 16px; }
+.pop-grid { display: grid; gap: 12px; margin-top: 18px; }
+.pop-foot { display: flex; flex-wrap: wrap; gap: 10px 16px; justify-content: space-between; align-items: center; margin-top: 18px; font-size: .92rem; color: var(--ink-soft); }
+
+/* coupons */
+.ticket { display: grid; grid-template-columns: 92px minmax(0, 1fr); background: var(--white); border: 1.5px dashed var(--blue); border-radius: 20px; overflow: hidden; }
+.ticket .tl { background: var(--blue-strong); color: var(--white); display: grid; place-items: center; text-align: center; padding: 10px 6px; font-family: var(--font-display); line-height: 1.2; }
+.ticket.sell .tl { background: var(--ink); }
+.ticket .tl b { font-size: 1.9rem; font-weight: 500; display: block; }
+.ticket .tl small { font-size: .78rem; opacity: .92; }
+.ticket .tr { padding: 14px 16px; display: grid; gap: 6px; min-width: 0; }
+.ticket .tr h3 { font-size: 1.02rem; }
+.ticket .tr p { font-size: .9rem; color: var(--ink-soft); line-height: 1.55; }
+.ticket .tact { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-top: 2px; }
+.codechip { font-family: var(--font-display); font-size: .82rem; background: var(--sky); color: var(--blue-strong); border-radius: 8px; padding: .1rem .6rem; letter-spacing: .05em; }
+.exp { font-size: .85rem; color: var(--ink-soft); }
+.expsoon { color: var(--warn-ink); }
+
+/* account */
+.acc-grid { display: grid; gap: 16px; margin-top: 18px; }
+@media (min-width: 900px) { .acc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; } .acc-grid .full { grid-column: 1 / -1; } }
+.sect { background: var(--white); border: 1px solid var(--line); border-radius: 22px; padding: 18px 20px; min-width: 0; }
+.sect h2 { font-size: 1.2rem; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+.sect h2 .i { color: var(--blue-strong); }
+.stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.stat { background: var(--sky); border-radius: 18px; padding: 14px; min-width: 0; }
+.stat b { display: block; font-family: var(--font-display); font-weight: 500; font-size: clamp(1.3rem, 4vw, 1.9rem); color: var(--blue-strong); line-height: 1.25; font-variant-numeric: tabular-nums; }
+.stat span { font-size: .88rem; color: var(--ink-soft); }
+.listrow { display: grid; grid-template-columns: 56px minmax(0, 1fr) auto; gap: 12px; align-items: center; padding: 10px 0; border-top: 1px solid var(--line); }
+.listrow:first-of-type { border-top: 0; }
+.listrow .art { border-radius: 12px; }
+.listrow a { text-decoration: none; line-height: 1.4; display: block; }
+.listrow small { color: var(--ink-soft); display: block; }
+.who { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.who .avatar { width: 56px; height: 56px; }
+.who b { font-family: var(--font-display); font-weight: 500; font-size: 1.15rem; display: block; }
+.who span { color: var(--ink-soft); font-size: .92rem; overflow-wrap: anywhere; }
+.confirmbox { background: var(--warn-bg); color: var(--warn-ink); border-radius: 14px; padding: 12px 14px; display: grid; gap: 10px; font-size: .95rem; }
+.btn-danger { border-color: var(--danger); color: var(--danger); }
+.btn-danger:hover { background: #FBE9ED; }
+.btn-dangerfill { background: var(--danger); color: var(--white); }
+
+/* live */
+.live-grid { display: grid; gap: 24px; margin-top: 18px; }
+@media (min-width: 900px) { .live-grid { grid-template-columns: minmax(0, 360px) minmax(0, 1fr); gap: 40px; align-items: start; } }
+.phone { position: relative; width: min(100%, 340px); aspect-ratio: 292 / 488; margin-inline: auto; border-radius: 32px; overflow: hidden; background: #0d1626; border: 6px solid var(--ink); box-shadow: 0 20px 50px rgba(29, 49, 80, .25); }
+.phone video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.phone .pill { position: absolute; left: 12px; top: 12px; font-size: .8rem; }
+.rooms { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.room { border: 2px solid var(--line); background: var(--white); border-radius: 16px; overflow: hidden; cursor: pointer; padding: 0; text-align: left; display: block; position: relative; }
+.room[aria-pressed="true"] { border-color: var(--blue-strong); }
+.room img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; display: block; }
+.room > span { display: block; padding: 8px 10px; font-family: var(--font-display); font-size: .9rem; line-height: 1.35; }
+.room .pill { position: absolute; left: 8px; top: 8px; }
+.livebox { display: grid; gap: 16px; min-width: 0; }
+.lcard .art { aspect-ratio: 3 / 4; }
+
+/* rental */
+.tiers { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+.tier { border: 1.5px solid var(--line); background: var(--white); border-radius: 14px; padding: 10px 4px; cursor: pointer; display: grid; gap: 2px; text-align: center; font-family: var(--font-display); }
+.tier small { font-family: var(--font-body); color: var(--ink-soft); font-size: .8rem; }
+.tier b { font-weight: 500; font-size: 1.05rem; color: var(--blue-strong); font-variant-numeric: tabular-nums; }
+.tier[aria-pressed="true"] { border-color: var(--blue-strong); background: var(--sky); }
+.gimg { display: block; width: 100%; max-height: 78vh; object-fit: contain; border-radius: 24px; border: 1px solid var(--line); background: var(--cream-deep); }
+.thumbs { display: flex; gap: 8px; margin-top: 10px; }
+.thumbs button { width: 72px; border: 2px solid var(--line); border-radius: 12px; overflow: hidden; padding: 0; background: none; cursor: pointer; }
+.thumbs button[aria-pressed="true"] { border-color: var(--blue-strong); }
+.thumbs img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; }
+.rcard .pimg .art { aspect-ratio: 3 / 4; }
+
+/* donate */
+.rules { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.rule { font-family: var(--font-display); background: var(--sky); color: var(--blue-strong); border-radius: 999px; padding: .3rem 1rem; }
+.dgrid { display: grid; gap: 18px; margin-top: 22px; }
+@media (min-width: 900px) { .dgrid { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 28px; align-items: start; } }
+.drow { display: grid; grid-template-columns: 48px minmax(0, 1fr) auto; gap: 12px; align-items: center; padding: 12px 0; border-top: 1px solid var(--line); }
+.drow:first-of-type { border-top: 0; }
+.drow .gi { width: 48px; height: 48px; border-radius: 14px; background: var(--sky); display: grid; place-items: center; }
+.drow .gi .garm { width: 70%; height: 70%; }
+.drow b { font-family: var(--font-display); font-weight: 500; display: block; line-height: 1.4; }
+.nocount { color: var(--ink-soft); font-size: .86rem; line-height: 1.4; display: block; }
+.stepper { display: inline-flex; align-items: center; border: 1.5px solid var(--line); border-radius: 999px; background: var(--cream); }
+.stepper button { width: 40px; height: 40px; border: 0; background: none; color: var(--blue-strong); cursor: pointer; display: grid; place-items: center; border-radius: 50%; }
+.stepper button:hover { background: var(--sky); }
+.stepper input { width: 3.2em; text-align: center; border: 0; background: transparent; font-family: var(--font-display); font-size: 1.1rem; color: var(--ink); -moz-appearance: textfield; padding: 0; }
+.stepper input::-webkit-outer-spin-button, .stepper input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.result { background: var(--blue-strong); color: var(--white); border-radius: 24px; padding: 22px; display: grid; gap: 14px; }
+.result .big { font-family: var(--font-display); font-size: clamp(2.6rem, 9vw, 3.8rem); line-height: 1; font-variant-numeric: tabular-nums; }
+.result .row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.result .row b { font-family: var(--font-display); font-weight: 500; font-size: 1.3rem; font-variant-numeric: tabular-nums; }
+.pbar { height: 12px; border-radius: 999px; background: rgba(255, 255, 255, .25); overflow: hidden; }
+.pbar span { display: block; height: 100%; background: var(--cream); width: 0; transition: width .25s; }
+.result small { opacity: .92; font-size: .9rem; line-height: 1.5; }
+.opts { display: grid; gap: 8px; margin-top: 6px; }
+.opt { display: flex; gap: 10px; align-items: flex-start; padding: 10px 12px; border: 1.5px solid var(--line); border-radius: 14px; cursor: pointer; font-size: .95rem; line-height: 1.5; background: var(--cream); }
+.opt input { margin-top: 4px; accent-color: var(--blue-strong); flex: none; width: 18px; height: 18px; }
+.opt.is-off { opacity: .6; cursor: default; }
+.opt small { display: block; color: var(--ink-soft); }
+.success { background: var(--sky); border-radius: 18px; padding: 14px 16px; display: flex; gap: 12px; align-items: flex-start; margin-bottom: 14px; }
+.success .i { color: var(--blue-strong); margin-top: 3px; }
+
+/* collab */
+.chans { display: grid; gap: 14px; margin-top: 22px; }
+@media (min-width: 900px) { .chans { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.chan { background: var(--white); border: 1px solid var(--line); border-radius: 24px; padding: 22px; display: grid; gap: 10px; align-content: start; min-width: 0; }
+.chan h3 { font-size: 1.15rem; }
+.chan p { color: var(--ink-soft); }
+.statusb { font-family: var(--font-display); font-size: .8rem; border-radius: 999px; padding: .12rem .75rem; width: fit-content; line-height: 1.5; }
+.statusb.plan { background: var(--warn-bg); color: var(--warn-ink); }
+.statusb.ready { background: var(--sky); color: var(--blue-strong); }
+.bins { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 18px; max-width: 520px; }
+.bin { border: 2px dashed var(--blue); border-radius: 22px; padding: 16px 10px; display: grid; justify-items: center; gap: 6px; text-align: center; background: var(--cream); }
+.bin .garm { width: 64px; height: 64px; }
+.bin b { font-family: var(--font-display); font-weight: 500; }
+.bin span { font-size: .88rem; color: var(--ink-soft); }
+.srclist { display: grid; gap: 10px; margin-top: 12px; }
+.src { background: var(--cream); border: 1px solid var(--line); border-radius: 18px; padding: 14px 16px; }
+.src b { font-family: var(--font-display); font-weight: 500; }
+.src p { font-size: .94rem; color: var(--ink-soft); }
+.twocol { display: grid; gap: 14px; margin-top: 14px; }
+@media (min-width: 760px) { .twocol { grid-template-columns: 1fr 1fr; } }
+.band-pad { background: var(--sky); border-radius: 28px; padding: clamp(20px, 4vw, 34px); margin-top: 28px; }
+
+/* cart extras */
+.cbox { display: grid; gap: 8px; margin: 10px 0; }
+.cbox h4 { font-size: 1rem; }
+.line-r { display: flex; justify-content: space-between; gap: 12px; padding: 6px 0; color: var(--ink-soft); }
+.line-r.disc { color: var(--blue-strong); }
+
+/* sell */
+.sell-grid2 { display: grid; gap: 18px; margin-top: 18px; }
+@media (min-width: 900px) { .sell-grid2 { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 28px; align-items: start; } }
+.step { background: var(--white); border: 1px solid var(--line); border-radius: 24px; padding: 20px; display: grid; gap: 14px; min-width: 0; }
+.step + .step { margin-top: 16px; }
+.step h2 { display: flex; gap: 10px; align-items: center; font-size: 1.15rem; }
+.sn { width: 30px; height: 30px; border-radius: 50%; background: var(--blue-strong); color: var(--white); display: grid; place-items: center; font-size: .95rem; flex: none; }
+.samples { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+@media (min-width: 560px) { .samples { grid-template-columns: repeat(6, minmax(0, 1fr)); } }
+.samples button { padding: 0; border: 2px solid var(--line); border-radius: 12px; overflow: hidden; cursor: pointer; background: none; }
+.samples button[aria-pressed="true"] { border-color: var(--blue-strong); }
+.samples img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; }
+.drop { display: flex; align-items: center; gap: 12px; border: 1.5px dashed var(--blue); border-radius: 16px; padding: 12px 14px; background: var(--sky); cursor: pointer; font-size: .95rem; }
+.drop input { display: none; }
+.aiout { background: var(--sky); border-radius: 18px; padding: 14px 16px; display: grid; gap: 8px; }
+.aiout .kv div { border-top-color: var(--sky-deep); }
+.chiprow { display: flex; flex-wrap: wrap; gap: 8px; }
+.chiprow button { border: 1.5px solid var(--blue-strong); background: var(--white); color: var(--blue-strong); border-radius: 999px; padding: .2rem .9rem; font-family: var(--font-display); font-size: .9rem; cursor: pointer; }
+.chiprow button:hover { background: var(--sky); }
+.frow2 { display: grid; gap: 14px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.previewcol2 { display: grid; gap: 16px; min-width: 0; }
+@media (min-width: 900px) { .previewcol2 { position: sticky; top: calc(136px + env(safe-area-inset-top, 0px)); } }
+.previewcol2 .pcard { max-width: 260px; }
+.notice { background: var(--warn-bg); color: var(--warn-ink); border-radius: 14px; padding: 10px 14px; font-size: .92rem; line-height: 1.55; }
+.notice a { color: inherit; }
+
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -477,6 +697,17 @@ button { font: inherit; color: inherit; }
     <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 16l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z"/></symbol>
     <symbol id="i-idcard" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><circle cx="9" cy="11" r="2"/><path d="M6 16c.6-1.6 1.8-2.4 3-2.4s2.4.8 3 2.4M14.5 10h4M14.5 13.5h3"/></symbol>
     <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 11v5M12 8v.2"/></symbol>
+  
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c.8-3.6 3.6-5.4 7-5.4s6.2 1.8 7 5.4"/></symbol>
+    <symbol id="i-ticket" viewBox="0 0 24 24"><path d="M4 7h16v3a2 2 0 0 0 0 4v3H4v-3a2 2 0 0 0 0-4z"/><path d="M14 8v8" stroke-dasharray="1.6 2"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+    <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s6-5.4 6-10a6 6 0 0 0-12 0c0 4.6 6 10 6 10z"/><circle cx="12" cy="11" r="2.2"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><path d="M3 8l9-4 9 4v9l-9 4-9-4z"/><path d="M3 8l9 4 9-4M12 12v9"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></symbol>
+
   </defs>
 </svg>
 
@@ -485,9 +716,9 @@ button { font: inherit; color: inherit; }
     <ul>
       <li><a href="#sell">ขายกับ Loopwear</a></li>
       <li><a href="#about">เกี่ยวกับเรา</a></li>
-      <li><a href="#donate">แคมเปญบริจาคแลกแต้ม</a></li>
+      <li><a href="#promo">โค้ดส่วนลด</a></li>
     </ul>
-    <span class="demo">เว็บไซต์ต้นแบบ สินค้า ร้านค้า และราคาเป็นข้อมูลตัวอย่าง</span>
+    <span class="demo">เว็บไซต์ต้นแบบ ข้อมูลสินค้า ร้านค้า และราคาเป็นตัวอย่าง</span>
   </div>
 </div>
 
@@ -506,6 +737,7 @@ button { font: inherit; color: inherit; }
         <svg class="i"><use href="#i-cart"/></svg>
         <span class="cbadge" data-cartcount hidden>0</span>
       </a>
+      <span class="hauth" id="hauth"></span>
     </div>
   </div>
   <nav class="catnav" aria-label="เมนูหลัก">
@@ -516,6 +748,8 @@ button { font: inherit; color: inherit; }
         <li><a href="#rent" data-nav="rent">เช่าเสื้อผ้า</a></li>
         <li><a href="#live" data-nav="live">ไลฟ์สด</a></li>
         <li><a href="#donate" data-nav="donate">บริจาคแลกแต้ม</a></li>
+        <li><a href="#collab" data-nav="collab">Collaboration</a></li>
+        <li><a href="#promo" data-nav="promo">โค้ดส่วนลด</a></li>
         <li><a href="#sell" data-nav="sell">ขายเสื้อผ้า</a></li>
         <li><a href="#about" data-nav="about">เกี่ยวกับเรา</a></li>
       </ul>
@@ -525,7 +759,6 @@ button { font: inherit; color: inherit; }
 
 <main id="app">
   <div class="view" id="view-dyn" hidden></div>
-
   <div class="view" id="view-about" hidden>
     <section class="hero">
       <div class="wrap hero-grid">
@@ -661,139 +894,279 @@ button { font: inherit; color: inherit; }
         <p>จุดรวมศูนย์กลางการซื้อขายสินค้าแฟชั่นมือสองออนไลน์ เพื่อลด Fast Fashion</p>
       </div>
       <div><h4>เลือกซื้อ</h4><ul><li><a href="#shop">ตลาดมือสอง</a></li><li><a href="#rent">เช่าเสื้อผ้า</a></li><li><a href="#live">ไลฟ์สด</a></li></ul></div>
-      <div><h4>Loopwear</h4><ul><li><a href="#about">เกี่ยวกับเรา</a></li><li><a href="#donate">บริจาคแลกแต้ม</a></li><li><a href="#sell">ขายกับ Loopwear</a></li></ul></div>
-      <div><h4>ซื้อขายอย่างมั่นใจ</h4><ul><li><a href="#about">ยืนยันตัวตนผู้ซื้อและผู้ขาย</a></li><li><a href="#about">AI ตรวจรูปภาพ</a></li><li><a href="#about">ประเมินผู้ขาย</a></li></ul></div>
+      <div><h4>Loopwear</h4><ul><li><a href="#about">เกี่ยวกับเรา</a></li><li><a href="#donate">บริจาคแลกแต้ม</a></li><li><a href="#collab">Collaboration</a></li></ul></div>
+      <div><h4>สมาชิก</h4><ul><li><a href="#promo">โค้ดส่วนลด</a></li><li><a href="#sell">ขายเสื้อผ้า</a></li><li><a href="#account">บัญชีของฉัน</a></li><li><button type="button" data-policy>นโยบายความเป็นส่วนตัว (PDPA)</button></li></ul></div>
     </div>
-    <p class="copy">เว็บไซต์ต้นแบบของ Loopwear สินค้า ร้านค้า ราคา และการชำระเงินเป็นข้อมูลตัวอย่างสำหรับนำเสนอ</p>
+    <p class="copy">เว็บไซต์ต้นแบบของ Loopwear สินค้า ร้านค้า ราคา การชำระเงิน และระบบสมาชิกเป็นข้อมูลตัวอย่างสำหรับนำเสนอ</p>
   </div>
 </footer>
 
 <nav class="tabbar" aria-label="เมนูด้านล่าง">
   <a href="#home" data-nav="home"><svg class="i"><use href="#i-home"/></svg>หน้าแรก</a>
   <a href="#shop" data-nav="shop"><svg class="i"><use href="#i-store"/></svg>ตลาด</a>
-  <a href="#live" data-nav="live"><svg class="i"><use href="#i-live"/></svg>ไลฟ์สด</a>
   <a href="#rent" data-nav="rent"><svg class="i"><use href="#i-loop"/></svg>เช่า</a>
+  <a href="#live" data-nav="live"><svg class="i"><use href="#i-live"/></svg>ไลฟ์สด</a>
   <a href="#cart" data-nav="cart"><svg class="i"><use href="#i-cart"/></svg>ตะกร้า<span class="cbadge" data-cartcount hidden>0</span></a>
+  <a href="#account" data-nav="account"><svg class="i"><use href="#i-user"/></svg>ฉัน</a>
 </nav>
 
 <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+<div class="mback" id="mroot" hidden><div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mtitle"></div></div>
 
 <script>
 (function () {
   'use strict';
 
-  var CATS = ['เสื้อ', 'เดรส', 'แจ็คเก็ต', 'กางเกง', 'กระโปรง'];
-  var GARM = { 'เสื้อ': 'tee', 'เดรส': 'dress', 'แจ็คเก็ต': 'jacket', 'กางเกง': 'pants', 'กระโปรง': 'skirt' };
+  /* ---------- helpers ---------- */
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+  var esc = function (s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
+  var fmt = function (n) { return '฿' + Number(n).toLocaleString('th-TH', { maximumFractionDigits: 2 }); };
+  var num = function (n) { return Number(n).toLocaleString('th-TH'); };
+  var r2 = function (n) { return Math.round(n * 100) / 100; };
+  var DAY = 86400000;
+  function fdate(t) { try { return new Date(t).toLocaleDateString('th-TH', { day: 'numeric', month: 'short', year: 'numeric' }); } catch (e) { return ''; } }
+  function ic(n, style) { return '<svg class="i"' + (style ? ' style="' + style + '"' : '') + ' aria-hidden="true"><use href="#i-' + n + '"/></svg>'; }
+  var CH = ic('chev', 'width:.9em;height:.9em');
+
+  /* ---------- storage (per-viewer demo accounts, no passwords kept) ---------- */
+  var mem = {};
+  function lsGet(k) { try { return window.localStorage.getItem(k); } catch (e) { return mem[k] || null; } }
+  function lsSet(k, v) { try { window.localStorage.setItem(k, v); } catch (e) { mem[k] = v; } }
+  var USERS = {};
+  try { USERS = JSON.parse(lsGet('loopwear.users') || '{}') || {}; } catch (e) { USERS = {}; }
+  var user = null, guest = false;
+  (function () { var em = lsGet('loopwear.session'); if (em && USERS[em]) user = USERS[em]; })();
+  function save() {
+    if (user) USERS[user.email] = user;
+    lsSet('loopwear.users', JSON.stringify(USERS, function (k, v) { return k === 'photo' ? undefined : v; }));
+    lsSet('loopwear.session', user ? user.email : '');
+  }
+
+  /* ---------- data ---------- */
+  var CATS = ['เสื้อ', 'กางเกง', 'กระโปรง', 'เดรส', 'แจ็คเก็ต', 'ชุดเซ็ต'];
+  var GARM = { 'เสื้อ': 'tee', 'กางเกง': 'pants', 'กระโปรง': 'skirt', 'เดรส': 'dress', 'แจ็คเก็ต': 'jacket', 'ชุดเซ็ต': 'dress' };
   var QS = ['เหมือนใหม่', 'ดีมาก', 'ดี', 'พอใช้'];
   var DS = ['ไม่มีตำหนิ', 'ตำหนิเล็กน้อย', 'มีตำหนิ'];
-  var SELLERS = [
-    { name: 'ร้านใส่ต่อ', rating: '4.9', live: false },
-    { name: 'Loop Closet', rating: '4.8', live: true },
-    { name: 'ตู้เสื้อผ้าฟ้าครีม', rating: '4.9', live: true },
-    { name: 'มือสองใจดี', rating: '4.7', live: false },
-    { name: 'ร้านเพื่อนบ้าน', rating: '4.8', live: true }
+  var SELLERS = { a: { name: 'ร้านตัวอย่าง A', rating: '4.9' }, b: { name: 'ร้านตัวอย่าง B', rating: '4.8' }, c: { name: 'ร้านตัวอย่าง C', rating: '4.7' }, me: { name: 'ร้านของฉัน', rating: '-' } };
+  var ITEMS = [
+    { id: 1, name: 'เสื้อยืดเด็กสีเหลือง ลาย Super Bowl 20', cat: 'เสื้อ', q: 'ดี', d: 'ตำหนิเล็กน้อย', price: 80, size: 'เสื้อเด็ก', seller: 'a', img: 'assets/img/sale-1.jpg', note: 'สีซีดและมีรอยคล้ำเล็กน้อยทั่วตัวเสื้อ', ai: { lo: 60, hi: 100 } },
+    { id: 2, name: 'Hollister เสื้อยืดคอวีลายขวางสีชมพู-ขาว', cat: 'เสื้อ', q: 'ดีมาก', d: 'ไม่มีตำหนิ', price: 190, size: 'M', seller: 'a', img: 'assets/img/sale-2.jpg', note: '', ai: { lo: 150, hi: 250 } },
+    { id: 3, name: 'แจ็คเก็ตยีนส์สีเข้ม กระดุมโลหะ กระเป๋าคู่', cat: 'แจ็คเก็ต', q: 'ดีมาก', d: 'ตำหนิเล็กน้อย', price: 450, size: '', seller: 'b', img: 'assets/img/sale-3.jpg', note: 'มีเส้นด้ายหลุดเล็กน้อยที่ชายเสื้อ', ai: { lo: 350, hi: 550 } },
+    { id: 4, name: 'เดรสสายเดี่ยวผ้าซาติน สีส้มอิฐ แต่งลูกไม้', cat: 'เดรส', q: 'ดีมาก', d: 'ตำหนิเล็กน้อย', price: 220, size: '', seller: 'b', img: 'assets/img/sale-4.jpg', note: 'เนื้อผ้ามีรอยยับ', ai: { lo: 150, hi: 300 } },
+    { id: 5, name: 'กางเกงคาร์โก้ลายพราง สีเทา-ขาว', cat: 'กางเกง', q: 'ดี', d: 'ตำหนิเล็กน้อย', price: 420, size: '', seller: 'c', img: 'assets/img/sale-5.jpg', note: 'สีซีดเล็กน้อยตามการใช้งาน', ai: { lo: 350, hi: 550 } },
+    { id: 6, name: 'Ralph Lauren เสื้อเชิ้ตยีนส์ฟอกสีอ่อน', cat: 'เสื้อ', q: 'ดีมาก', d: 'ไม่มีตำหนิ', price: 520, size: '', seller: 'c', img: 'assets/img/sale-6.jpg', note: '', ai: { lo: 400, hi: 650 } }
   ];
-  // id, name, cat, quality, defect, price, size, seller, bg, fill, rent/day, ai status, defect note
-  var RAW = [
-    [1, 'เสื้อยืดคอกลมสีฟ้าอ่อน', 'เสื้อ', 'เหมือนใหม่', 'ไม่มีตำหนิ', 150, 'M', 0, '#E6EFF9', '#8FB0DA', null, 1, ''],
-    [2, 'เสื้อเชิ้ตลินินสีครีม', 'เสื้อ', 'ดีมาก', 'ไม่มีตำหนิ', 290, 'L', 1, '#F5F0DE', '#EFE6C8', null, 1, ''],
-    [3, 'เดรสยาวผ้าฝ้ายลายดอกสีฟ้า', 'เดรส', 'ดีมาก', 'ตำหนิเล็กน้อย', 420, 'S', 2, '#E6EFF9', '#6993C2', 80, 1, 'สีจางเล็กน้อยที่ปลายแขน'],
-    [4, 'แจ็คเก็ตยีนส์วินเทจ', 'แจ็คเก็ต', 'ดี', 'ตำหนิเล็กน้อย', 650, 'M', 0, '#F5F0DE', '#6993C2', null, 1, 'สีซีดตามขอบกระเป๋า'],
-    [5, 'กางเกงขายาวทรงสบาย', 'กางเกง', 'ดีมาก', 'ไม่มีตำหนิ', 330, '30', 3, '#E6EFF9', '#A9C3E3', null, 1, ''],
-    [6, 'กระโปรงพลีทสีฟ้า', 'กระโปรง', 'เหมือนใหม่', 'ไม่มีตำหนิ', 260, 'S', 1, '#FDF3DC', '#8FB0DA', 60, 1, ''],
-    [7, 'เสื้อฮู้ดสีครีม', 'แจ็คเก็ต', 'ดี', 'ไม่มีตำหนิ', 380, 'L', 4, '#E6EFF9', '#EFE6C8', null, 1, ''],
-    [8, 'เดรสเข้ารูปสำหรับงานเลี้ยง', 'เดรส', 'เหมือนใหม่', 'ไม่มีตำหนิ', 890, 'M', 2, '#F5F0DE', '#386399', 150, 1, ''],
-    [9, 'เสื้อกล้ามผ้าถัก', 'เสื้อ', 'พอใช้', 'มีตำหนิ', 90, 'Free', 3, '#FDF3DC', '#A9C3E3', null, 1, 'มีรอยดึงของเส้นด้ายที่ชายเสื้อ'],
-    [10, 'กางเกงยีนส์ขาตรง', 'กางเกง', 'ดี', 'ตำหนิเล็กน้อย', 450, '32', 4, '#E6EFF9', '#6993C2', null, 1, 'ชายขากางเกงสึกเล็กน้อย'],
-    [11, 'กระโปรงยีนส์ทรงเอ', 'กระโปรง', 'ดีมาก', 'ไม่มีตำหนิ', 280, 'M', 0, '#F5F0DE', '#8FB0DA', null, 1, ''],
-    [12, 'แจ็คเก็ตบอมเบอร์สีฟ้าเข้ม', 'แจ็คเก็ต', 'ดีมาก', 'ไม่มีตำหนิ', 720, 'L', 1, '#E6EFF9', '#386399', 120, 1, ''],
-    [13, 'เดรสเชิ้ตสีขาวครีม', 'เดรส', 'ดี', 'ตำหนิเล็กน้อย', 350, 'M', 3, '#E6EFF9', '#F5F0DE', null, 1, 'มีคราบจางที่ด้านหลัง ซักออกบางส่วน'],
-    [14, 'เสื้อโปโลสีฟ้า', 'เสื้อ', 'ดีมาก', 'ไม่มีตำหนิ', 200, 'XL', 4, '#FDF3DC', '#6993C2', null, 1, ''],
-    [15, 'กางเกงสแล็คสีกรมท่า', 'กางเกง', 'เหมือนใหม่', 'ไม่มีตำหนิ', 540, '30', 2, '#F5F0DE', '#386399', 90, 1, ''],
-    [16, 'เสื้อคาร์ดิแกนถัก', 'เสื้อ', 'ดี', 'มีตำหนิ', 180, 'M', 0, '#E6EFF9', '#EFE6C8', null, 0, 'กระดุมหายหนึ่งเม็ด']
+  var DAYS = [1, 2, 3, 5];
+  var RENTS = [
+    { id: 101, name: 'Lady Flirt Sleeveless สีขาวลูกไม้', brand: 'Fabrique', cat: 'เดรส', size: 'S', type: 'ชุดเดรส', prices: [350, 390, 450, 520], spec: 'B 30-32″ · W 24-25″ · H 34-35″ · L 30″', img: 'assets/img/rent-1.jpg', card: 'assets/img/rent-1-card.jpg' },
+    { id: 102, name: 'Cardigan Top x Skirt สีดำ', brand: 'NIUNIU', cat: 'ชุดเซ็ต', size: 'S', type: 'เสื้อ + กระโปรง', prices: [300, 350, 390, 450], spec: 'B 31-32″ · W 24-25″ · H 35-36″', img: 'assets/img/rent-2.jpg', card: 'assets/img/rent-2-card.jpg' },
+    { id: 103, name: 'Emily Dress สีชมพู', brand: 'FIRRR', cat: 'เดรส', size: 'S', type: 'ชุดเดรส', prices: [450, 500, 550, 600], spec: 'B -32″ · W -26″ · H -41″ · L 48.5″', img: 'assets/img/rent-3.jpg', card: 'assets/img/rent-3-card.jpg' },
+    { id: 104, name: 'Leni Set สี Cream Blue', brand: 'Fabrique', cat: 'ชุดเซ็ต', size: 'เสื้อ S + กางเกง M', type: 'เสื้อ + กางเกงขาสั้น', prices: [450, 490, 550, 650], spec: 'เสื้อ: B 30-32″ W 24-36″ L 19.5″ · กางเกง: เอวต่ำ 29-30″ H 36-37″ L 10″', img: 'assets/img/rent-4.jpg', card: 'assets/img/rent-4-card.jpg' },
+    { id: 105, name: 'Flair Dress สี Lace Mint', brand: 'Fabrique', cat: 'เดรส', size: 'S', type: 'ชุดเดรส', prices: [300, 340, 380, 480], spec: 'B 30-32″ · W 24-26″ · H 34-36″', img: 'assets/img/rent-5.jpg', card: 'assets/img/rent-5-card.jpg' }
   ];
-  var ITEMS = RAW.map(function (r) {
-    return { id: r[0], name: r[1], cat: r[2], q: r[3], d: r[4], price: r[5], size: r[6], seller: r[7], bg: r[8], fill: r[9], rent: r[10], ai: r[11], note: r[12] };
-  });
-  function byId(id) { for (var i = 0; i < ITEMS.length; i++) if (ITEMS[i].id === id) return ITEMS[i]; return null; }
+  var ROOMS = [
+    { id: 1, title: 'ห้องไลฟ์ 1', seller: 'ร้านตัวอย่าง A', video: 'assets/video/live-1.mp4', poster: 'assets/video/live-1.jpg', items: [1, 2] },
+    { id: 2, title: 'ห้องไลฟ์ 2', seller: 'ร้านตัวอย่าง B', video: 'assets/video/live-2.mp4', poster: 'assets/video/live-2.jpg', items: [4, 3] },
+    { id: 3, title: 'ห้องไลฟ์ 3', seller: 'ร้านตัวอย่าง C', video: 'assets/video/live-3.mp4', poster: 'assets/video/live-3.jpg', items: [5, 6] }
+  ];
+  var COUPONS = {
+    WELCOME10: { code: 'WELCOME10', type: 'buy', title: 'ซื้อขั้นต่ำ ฿100 ลด 10%', short: '10%', unit: 'ส่วนลด', min: 100, pct: 10, days: 7, desc: 'สำหรับสมาชิกใหม่ ได้รับทันทีตอนสมัคร หมดอายุหลังเก็บ 1 สัปดาห์' },
+    LOOPFIRST: { code: 'LOOPFIRST', type: 'sell', title: 'ขายครั้งแรก ไม่เก็บค่าคอม', short: '0%', unit: 'ค่าคอม', maxItems: 5, maxValue: 300, desc: 'ลงขายไม่เกิน 5 ชิ้น และมูลค่ารวมไม่เกิน ฿300' }
+  };
+  var POINT_CATS = ['เสื้อ', 'กางเกง', 'กระโปรง'];
 
-  var state = { q: '', cats: [], quals: [], defs: [], min: '', max: '', sort: 'new', rentOnly: false, liveSeller: 2 };
+  /* ---------- state ---------- */
+  var state = { q: '', cats: [], quals: [], defs: [], min: '', max: '', sort: 'new' };
   var cart = [];
-  var itemMode = 'buy', itemDays = 3, itemFor = 0;
-  var carTimer = null, toastTimer = null;
-  var draft = { name: '', cat: 'เสื้อ', q: 'ดีมาก', d: 'ไม่มีตำหนิ', price: 300, size: 'M', photo: '' };
+  var cartOpt = { coupon: 'auto', usePts: false };
+  var lastOrder = null;
+  var rentSel = {};
+  var gal = {};
+  var roomSel = 1;
+  var don = { shirt: 0, pants: 0, skirt: 0, other: 0, channel: 'online', done: null };
+  var delAsk = false;
+  var draft = blankDraft();
+  function blankDraft() { return { src: '', img: '', photo: '', analyzed: false, ai: null, name: '', cat: 'เสื้อ', q: 'ดี', d: 'ไม่มีตำหนิ', price: '', size: '', usePts: false }; }
 
-  function $(s, r) { return (r || document).querySelector(s); }
-  function $$(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
-  function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
-  function fmt(n) { return '฿' + Number(n).toLocaleString('th-TH', { maximumFractionDigits: 2 }); }
-  function icon(n, extra) { return '<svg class="i"' + (extra ? ' style="' + extra + '"' : '') + ' aria-hidden="true"><use href="#i-' + n + '"/></svg>'; }
+  function allItems() { return ITEMS.concat((user && user.listings) || []); }
+  function byId(id) { var a = allItems(); for (var i = 0; i < a.length; i++) if (a[i].id === id) return a[i]; return null; }
+  function rentById(id) { for (var i = 0; i < RENTS.length; i++) if (RENTS[i].id === id) return RENTS[i]; return null; }
+  function imgOf(it) { return it.img || it.photo || ''; }
+  function sellerOf(it) { return SELLERS[it.seller] || SELLERS.a; }
+  function rentPrice(r, d) { return r.prices[DAYS.indexOf(d)]; }
 
+  /* ---------- coupons / points ---------- */
+  function has(code) {
+    if (!user) return null;
+    var cs = user.coupons || [];
+    for (var i = 0; i < cs.length; i++) if (cs[i].code === code && !cs[i].used && (!cs[i].expiresAt || cs[i].expiresAt > Date.now())) return cs[i];
+    return null;
+  }
+  function owned(code) { var cs = (user && user.coupons) || []; for (var i = 0; i < cs.length; i++) if (cs[i].code === code) return cs[i]; return null; }
+  function addCoupon(code) {
+    var c = COUPONS[code];
+    user.coupons.push({ code: code, collectedAt: Date.now(), expiresAt: c.days ? Date.now() + c.days * DAY : null, used: false });
+  }
+  function collect(code) {
+    if (!user) { toast('กรุณาเข้าสู่ระบบก่อนเก็บโค้ด'); go('login'); return false; }
+    var c = COUPONS[code];
+    if (!c || owned(code)) return false;
+    if (code === 'WELCOME10' && !user.isNew) { toast('โค้ดนี้สำหรับสมาชิกใหม่เท่านั้น'); return false; }
+    addCoupon(code); save(); toast('เก็บโค้ดแล้ว'); refreshPromoUI(); return true;
+  }
+  function sellFee(price, usePts) {
+    var base = r2(price * 7 / 100), promo = false, p = (user && user.sellerPromo) || { count: 0, value: 0 };
+    var lf = COUPONS.LOOPFIRST;
+    if (has('LOOPFIRST') && p.count < lf.maxItems && p.value + price <= lf.maxValue) promo = true;
+    var fee = promo ? 0 : base, pts = 0, val = 0;
+    if (usePts && user && !promo && fee > 0) {
+      var blocks = Math.min(Math.floor(user.points / 30), Math.floor(fee / 5));
+      pts = blocks * 30; val = blocks * 5; fee = r2(fee - val);
+    }
+    return { base: base, fee: fee, promo: promo, pts: pts, ptsVal: val, net: r2(price - fee) };
+  }
+
+  /* ---------- art + cards ---------- */
   function art(it, cls) {
-    if (it.photo) return '<span class="art ' + (cls || '') + '" style="background:' + it.bg + '"><img src="' + it.photo + '" alt=""></span>';
-    return '<span class="art ' + (cls || '') + '" style="background:' + it.bg + '"><svg class="garm" viewBox="0 0 100 100" aria-hidden="true"><use href="#g-' + GARM[it.cat] + '" fill="' + it.fill + '"/></svg></span>';
+    cls = cls || '';
+    var src = imgOf(it);
+    if (src) return '<span class="art ' + cls + '"><img src="' + src + '" alt="' + esc(it.name) + '" loading="lazy"></span>';
+    return '<span class="art ' + cls + '" style="background:var(--sky)"><svg class="garm" viewBox="0 0 100 100" aria-hidden="true"><use href="#g-' + (GARM[it.cat] || 'tee') + '" fill="#8FB0DA"/></svg></span>';
   }
-  function badges(it) {
-    var qi = QS.indexOf(it.q), di = DS.indexOf(it.d);
-    return '<span class="qb q-' + qi + '">' + it.q + '</span><span class="db d-' + di + '">' + it.d + '</span>';
-  }
-  function liveOf(it) { return SELLERS[it.seller].live; }
-
+  function badges(it) { return '<span class="qb q-' + QS.indexOf(it.q) + '">' + it.q + '</span><span class="db d-' + DS.indexOf(it.d) + '">' + it.d + '</span>'; }
+  function inLive(it) { for (var i = 0; i < ROOMS.length; i++) if (ROOMS[i].items.indexOf(it.id) >= 0) return ROOMS[i]; return null; }
   function card(it) {
-    var s = SELLERS[it.seller];
-    var href = it.preview ? '#sell' : '#item-' + it.id;
-    var ribbon = '';
-    if (it.rent) ribbon += '<span class="pill rent">เช่าได้</span>';
-    if (!it.preview && liveOf(it)) ribbon += '<span class="pill live">LIVE</span>';
-    return '<article class="pcard"><a class="pimg" href="' + href + '" aria-label="' + esc(it.name) + '">' + art(it) + (ribbon ? '<span class="ribbon">' + ribbon + '</span>' : '') + '</a>' +
+    var s = sellerOf(it), href = it.preview ? '#sell' : '#item-' + it.id, live = !it.preview && inLive(it);
+    var rib = (live ? '<span class="pill live">LIVE</span>' : '') + (it.mine ? '<span class="pill">ของฉัน</span>' : '');
+    return '<article class="pcard"><a class="pimg" href="' + href + '" aria-label="' + esc(it.name) + '">' + art(it, 'tall') + (rib ? '<span class="ribbon">' + rib + '</span>' : '') + '</a>' +
       '<div class="pinfo"><a class="pname" href="' + href + '">' + esc(it.name) + '</a><div class="ptags">' + badges(it) + '</div>' +
-      '<div class="pbot"><div class="pprice">' + fmt(it.price) + (it.rent ? '<small>เช่า ' + fmt(it.rent) + '/วัน</small>' : '') + '</div>' +
-      (it.preview ? '' : '<button class="padd" type="button" data-add="' + it.id + '" aria-label="ใส่ตะกร้า ' + esc(it.name) + '">' + icon('plus') + '</button>') + '</div>' +
-      '<div class="pseller">' + icon('shield') + '<span>' + esc(s.name) + '</span><b>★ ' + s.rating + '</b></div></div></article>';
+      '<div class="pbot"><div class="pprice">' + fmt(it.price) + '</div>' + (it.preview ? '' : '<button class="padd" type="button" data-add="' + it.id + '" aria-label="ใส่ตะกร้า ' + esc(it.name) + '">' + ic('plus') + '</button>') + '</div>' +
+      '<div class="pseller">' + ic('shield') + '<span>' + esc(s.name) + '</span>' + (s.rating !== '-' ? '<b>★ ' + s.rating + '</b>' : '') + '</div></div></article>';
+  }
+  function rcard(r) {
+    var d = rentSel[r.id] || 1;
+    return '<article class="pcard rcard"><a class="pimg" href="#rent-' + r.id + '" aria-label="' + esc(r.name) + '"><span class="art rentp"><img src="' + r.img + '" alt="' + esc(r.name) + '" loading="lazy"></span><span class="ribbon"><span class="pill rent">เช่าได้</span></span></a>' +
+      '<div class="pinfo"><a class="pname" href="#rent-' + r.id + '">' + esc(r.name) + '</a><div class="ptags"><span class="qb q-2">' + r.type + '</span><span class="qb q-1">ไซส์ ' + esc(r.size) + '</span></div>' +
+      '<div class="pbot"><div class="pprice">' + fmt(r.prices[0]) + '<small>เริ่มต้น / 1 วัน</small></div><button class="padd" type="button" data-addrent="' + r.id + '" aria-label="ใส่ตะกร้า ' + esc(r.name) + ' เช่า ' + d + ' วัน">' + ic('plus') + '</button></div>' +
+      '<div class="pseller">' + ic('shield') + '<span>' + esc(r.brand) + '</span></div></div></article>';
+  }
+
+  /* ---------- toast + modal ---------- */
+  var toastTimer = null, lastFocus = null;
+  function toast(msg) {
+    var t = $('#toast'); t.textContent = msg; t.hidden = false;
+    clearTimeout(toastTimer); toastTimer = setTimeout(function () { t.hidden = true; }, 2600);
+  }
+  function openModal(kind, title, html) {
+    lastFocus = document.activeElement;
+    var m = $('#modal'); m.setAttribute('data-kind', kind);
+    m.innerHTML = '<button class="mclose" type="button" data-closemodal aria-label="ปิดหน้าต่าง">' + ic('close') + '</button><h2 id="mtitle">' + title + '</h2>' + html;
+    $('#mroot').hidden = false;
+    var f = $('.mclose', m); if (f) f.focus();
+  }
+  function closeModal() {
+    $('#mroot').hidden = true; $('#modal').innerHTML = ''; $('#modal').removeAttribute('data-kind');
+    if (lastFocus && lastFocus.focus) { try { lastFocus.focus(); } catch (e) { /* ignore */ } }
+  }
+  function modalOpen() { return !$('#mroot').hidden; }
+
+  function policyHtml() {
+    return '<div class="policy"><p style="margin-top:6px">Loopwear เก็บและใช้ข้อมูลส่วนบุคคลของคุณตามพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 (PDPA) ตามรายละเอียดนี้</p>' +
+      '<h3>ข้อมูลที่เราเก็บ</h3><ul><li>ข้อมูลบัญชี: ชื่อที่แสดง อีเมล และรหัสผ่าน</li><li>ข้อมูลการใช้งาน: รูปและรายละเอียดสินค้าที่ลงขาย ประวัติการซื้อ ขาย เช่า และบริจาค แต้มสะสม และคูปอง</li><li>ข้อมูลยืนยันตัวตน: เก็บเมื่อคุณเลือกยืนยันตัวตนเท่านั้น</li></ul>' +
+      '<h3>วัตถุประสงค์ในการใช้ข้อมูล</h3><ul><li>สร้างและดูแลบัญชี รวมถึงดำเนินการซื้อ ขาย เช่า และบริจาค</li><li>ให้ AI ช่วยคัดแยกประเภท ประเมินราคามือสอง ประเมินคุณภาพสินค้า และตรวจสอบรูปภาพเพื่อป้องกันการหลอกลวง</li><li>ยืนยันตัวตนของผู้ซื้อและผู้ขาย</li><li>ให้สิทธิประโยชน์ เช่น แต้มสะสมและคูปอง</li><li>ส่งข่าวสารโปรโมชัน เฉพาะเมื่อคุณให้ความยินยอมแยกต่างหาก</li></ul>' +
+      '<h3>การเปิดเผยข้อมูล</h3><p>เท่าที่จำเป็นต่อการทำรายการ เช่น คู่ซื้อขาย ผู้ให้บริการขนส่งและชำระเงิน และมูลนิธิที่รับสินค้าบริจาค</p>' +
+      '<h3>ระยะเวลาเก็บข้อมูล</h3><p>เก็บเท่าที่จำเป็นตามวัตถุประสงค์ข้างต้น และตามที่กฎหมายกำหนด</p>' +
+      '<h3>สิทธิของคุณ</h3><ul><li>ขอเข้าถึงและขอสำเนาข้อมูล</li><li>ขอแก้ไขข้อมูลให้ถูกต้อง</li><li>ขอลบหรือทำลายข้อมูล</li><li>ขอระงับหรือคัดค้านการใช้ข้อมูล และขอให้โอนย้ายข้อมูล</li><li>ถอนความยินยอมเมื่อใดก็ได้ที่ "บัญชีของฉัน" หัวข้อความเป็นส่วนตัว การถอนไม่กระทบการใช้ข้อมูลที่ทำไปแล้วก่อนหน้า</li></ul>' +
+      '<h3>ช่องทางติดต่อผู้ควบคุมข้อมูล</h3><p>จะระบุเมื่อเปิดให้บริการจริง</p>' +
+      '<p class="draft">ข้อความนี้เป็นแบบร่างสำหรับต้นแบบ ควรให้ผู้เชี่ยวชาญด้านกฎหมายตรวจสอบก่อนเปิดใช้งานจริง</p></div>';
+  }
+  function openPolicy() { openModal('policy', 'นโยบายความเป็นส่วนตัว (PDPA)', policyHtml()); }
+
+  function ticket(code, ctx) {
+    var c = COUPONS[code], mine = owned(code), usable = has(code), act, exp = '';
+    if (mine) {
+      if (mine.used) act = '<button class="btn btn-ghost btn-sm" type="button" disabled>ใช้แล้ว</button>';
+      else if (mine.expiresAt && mine.expiresAt <= Date.now()) act = '<button class="btn btn-ghost btn-sm" type="button" disabled>หมดอายุ</button>';
+      else act = '<button class="btn btn-ghost btn-sm" type="button" disabled>' + ic('check') + 'เก็บแล้ว</button>';
+      if (mine.expiresAt) exp = '<span class="exp' + (mine.expiresAt - Date.now() < 2 * DAY && usable ? ' expsoon' : '') + '">หมดอายุ ' + fdate(mine.expiresAt) + '</span>';
+      else exp = '<span class="exp">ไม่มีวันหมดอายุที่ระบุ</span>';
+    } else if (code === 'WELCOME10' && user && !user.isNew) act = '<button class="btn btn-ghost btn-sm" type="button" disabled>เฉพาะสมาชิกใหม่</button>';
+    else act = '<button class="btn btn-primary btn-sm" type="button" data-collect="' + code + '">เก็บโค้ด</button>';
+    return '<div class="ticket ' + c.type + '"><div class="tl"><span><b>' + c.short + '</b><small>' + c.unit + '</small></span></div><div class="tr"><h3>' + c.title + '</h3><p>' + c.desc + '</p><div class="tact"><span class="codechip">' + c.code + '</span>' + act + exp + '</div></div></div>';
+  }
+  function promoPopup() {
+    openModal('promo', 'ยินดีต้อนรับสู่ Loopwear', '<p class="lead2">เก็บโค้ดส่วนลดช่วงเปิดตัวก่อนเริ่มช้อป</p><div class="pop-grid">' + ticket('WELCOME10') + ticket('LOOPFIRST') + '</div>' +
+      '<div class="pop-foot"><span>ช่วงดำเนินงาน: คูปองให้เก็บเองที่ศูนย์โค้ดส่วนลด</span><span style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn btn-ghost btn-sm" href="#promo" data-closemodal>ไปศูนย์โค้ด</a><button class="btn btn-primary btn-sm" type="button" data-closemodal>เริ่มช้อป</button></span></div>');
+  }
+  function refreshPromoUI() {
+    var m = $('#modal');
+    if (modalOpen() && m.getAttribute('data-kind') === 'promo') {
+      var keep = lastFocus; promoPopup(); lastFocus = keep;
+    }
+    var r = parseHash().name; if (r === 'promo' || r === 'account') route(true);
   }
 
   /* ---------- views ---------- */
-  var RENDER = {};
+  var RENDER = {}, AFTER = {};
 
+  function authSide() {
+    return '<aside class="auth-side"><span class="mark" role="img" aria-label="โลโก้ Loopwear"></span><h1>ให้เสื้อผ้าตัวเก่า ได้<em>วนไป</em>อยู่กับคนใหม่</h1>' +
+      '<ul><li>' + ic('tag') + '<span>AI ช่วยประเมินราคา คุณภาพ และตรวจรูปสินค้ามือสอง</span></li><li>' + ic('shield') + '<span>ผู้ซื้อและผู้ขายยืนยันตัวตน เพื่อซื้อขายอย่างมั่นใจ</span></li><li>' + ic('heart') + '<span>บริจาคเสื้อผ้า สะสมแต้ม ใช้เป็นส่วนลด</span></li></ul></aside>';
+  }
+  RENDER.login = function () {
+    return '<div class="wrap auth-wrap"><section class="auth-card" aria-labelledby="lt"><div class="authtabs"><a href="#login" aria-current="page">เข้าสู่ระบบ</a><a href="#register">สมัครสมาชิก</a></div>' +
+      '<h2 id="lt" style="font-size:1.5rem;margin-bottom:16px">ยินดีต้อนรับกลับมา</h2>' +
+      '<form id="loginform" class="fgrid" novalidate><div class="fld"><label for="l-email">อีเมล</label><input id="l-email" type="email" autocomplete="email" placeholder="you@example.com"></div>' +
+      '<div class="fld"><label for="l-pw">รหัสผ่าน</label><input id="l-pw" type="password" autocomplete="current-password"></div><p class="err" id="l-err" role="alert"></p>' +
+      '<button class="btn btn-primary btn-block" type="submit">เข้าสู่ระบบ</button></form>' +
+      '<div class="divider">หรือ</div><div class="fgrid"><button class="btn btn-ghost btn-block" type="button" data-demo>ลองใช้บัญชีตัวอย่าง</button><button class="btn btn-block" type="button" data-guest style="color:var(--ink-soft)">เข้าชมสินค้าก่อน ยังไม่เข้าสู่ระบบ</button></div>' +
+      '<p class="hint" style="margin-top:16px">ต้นแบบเก็บบัญชีไว้ในเบราว์เซอร์นี้เท่านั้น และยังไม่ตรวจรหัสผ่านจริง ยังไม่มีสมาชิก? <a class="ext" href="#register">สมัครสมาชิก</a></p></section>' + authSide() + '</div>';
+  };
+  RENDER.register = function () {
+    return '<div class="wrap auth-wrap"><section class="auth-card" aria-labelledby="rt"><div class="authtabs"><a href="#login">เข้าสู่ระบบ</a><a href="#register" aria-current="page">สมัครสมาชิก</a></div>' +
+      '<h2 id="rt" style="font-size:1.5rem;margin-bottom:6px">สร้างบัญชี Loopwear</h2><p class="hint" style="margin-bottom:16px">สมาชิกใหม่รับคูปองซื้อขั้นต่ำ ฿100 ลด 10% ทันทีตอนสมัคร</p>' +
+      '<form id="regform" class="fgrid" novalidate>' +
+      '<div class="fld"><label for="r-name">ชื่อที่แสดง</label><input id="r-name" type="text" autocomplete="nickname"></div>' +
+      '<div class="fld"><label for="r-email">อีเมล</label><input id="r-email" type="email" autocomplete="email" placeholder="you@example.com"></div>' +
+      '<div class="fld"><label for="r-pw">รหัสผ่าน</label><input id="r-pw" type="password" autocomplete="new-password"><span class="hint">อย่างน้อย 8 ตัวอักษร</span></div>' +
+      '<div class="fld"><label for="r-pw2">ยืนยันรหัสผ่าน</label><input id="r-pw2" type="password" autocomplete="new-password"></div>' +
+      '<div class="consent" role="group" aria-labelledby="cons-t"><b id="cons-t" style="font-family:var(--font-display);font-weight:500">ความยินยอมด้านข้อมูลส่วนบุคคล (PDPA)</b>' +
+      '<label class="chk"><input type="checkbox" id="c-terms"><span>ข้าพเจ้าได้อ่านและยอมรับ <button type="button" class="tlink" data-policy>นโยบายความเป็นส่วนตัว</button> และยินยอมให้ Loopwear เก็บ ใช้ และเปิดเผยข้อมูลส่วนบุคคลเพื่อให้บริการซื้อขาย เช่า และบริจาค <b>(จำเป็น)</b></span></label>' +
+      '<label class="chk"><input type="checkbox" id="c-mkt"><span>ยินยอมรับข่าวสารโปรโมชันและคูปองจาก Loopwear <b>(ไม่บังคับ)</b></span></label>' +
+      '<span class="hint">เปลี่ยนหรือถอนความยินยอมได้ทุกเมื่อที่หน้าบัญชีของฉัน</span></div>' +
+      '<p class="err" id="r-err" role="alert"></p><button class="btn btn-primary btn-block" type="submit">สมัครสมาชิก</button></form>' +
+      '<p class="hint" style="margin-top:16px">ต้นแบบเก็บบัญชีไว้ในเบราว์เซอร์นี้เท่านั้น และไม่เก็บรหัสผ่าน</p></section>' + authSide() + '</div>';
+  };
+
+  function quick(r, ico, label) { return '<a class="qitem" href="#' + r + '"><span class="ic">' + ic(ico) + '</span>' + label + '</a>'; }
   RENDER.home = function () {
-    var rec = ITEMS.filter(function (i) { return i.q === 'เหมือนใหม่' || i.q === 'ดีมาก'; }).slice(0, 10);
-    var rentable = ITEMS.filter(function (i) { return i.rent; }).slice(0, 5);
-    var lives = SELLERS.map(function (s, i) { return { s: s, i: i }; }).filter(function (x) { return x.s.live; });
+    var items = allItems().slice(0, 6);
     return '<div class="wrap">' +
       '<div class="hero2"><div class="carousel"><div class="track" id="track">' +
-        '<div class="slide s1"><div><span class="k">ตลาดแฟชั่นมือสองออนไลน์</span><h2>ให้เสื้อผ้าตัวเก่า ได้วนไปอยู่กับคนใหม่</h2><p>จุดรวมศูนย์กลางซื้อขายแฟชั่นมือสอง เพื่อลด Fast Fashion</p><a class="btn btn-primary" href="#shop">เลือกซื้อเลย</a></div><div class="sart"><span class="mark" role="img" aria-label="โลโก้ Loopwear" style="aspect-ratio:520/482"></span></div></div>' +
-        '<div class="slide s2"><div><span class="k">แคมเปญ</span><h2>บริจาคแลกแต้ม x มูลนิธิ</h2><p>สะสมแต้มไว้ลดค่าธรรมเนียม หรือเป็นส่วนลดการซื้อสินค้า</p><a class="btn btn-primary" href="#donate">ดูแคมเปญ</a></div><div class="sart"><span class="big">' + icon('heart') + '</span></div></div>' +
-        '<div class="slide s3"><div><span class="k">ศูนย์รวมการเช่า</span><h2>เช่าเสื้อผ้า ได้ในที่เดียว</h2><p>ไม่ต้องซื้อทุกตัว เลือกเช่าชุดที่ต้องการได้</p><a class="btn btn-primary" href="#rent">ดูสินค้าให้เช่า</a></div><div class="sart"><span class="big">' + icon('loop') + '</span></div></div>' +
+      '<div class="slide s1"><div><span class="k">ตลาดแฟชั่นมือสองออนไลน์</span><h2>ให้เสื้อผ้าตัวเก่า ได้วนไปอยู่กับคนใหม่</h2><p>จุดรวมศูนย์กลางซื้อขายแฟชั่นมือสอง เพื่อลด Fast Fashion</p><a class="btn btn-primary" href="#shop">เลือกซื้อเลย</a></div><div class="sart"><span class="mark" role="img" aria-label="โลโก้ Loopwear" style="aspect-ratio:520/482"></span></div></div>' +
+      '<div class="slide s2"><div><span class="k">บริจาคแลกแต้ม</span><h2>บริจาค 1 ตัว ได้ 1 แต้ม</h2><p>ทุก 30 แต้ม = ฿5 นับเฉพาะเสื้อ กางเกง กระโปรง</p><a class="btn btn-primary" href="#donate">เริ่มบริจาค</a></div><div class="sart"><span class="big">' + ic('heart') + '</span></div></div>' +
+      '<div class="slide s3"><div><span class="k">สมาชิกใหม่</span><h2>ซื้อขั้นต่ำ ฿100 ลด 10%</h2><p>รับคูปองทันทีตอนสมัคร หมดอายุหลังเก็บ 1 สัปดาห์</p><a class="btn btn-primary" href="#promo">ดูโค้ดส่วนลด</a></div><div class="sart"><span class="big">' + ic('ticket') + '</span></div></div>' +
       '</div><div class="dots" id="dots"><button type="button" aria-label="สไลด์ 1" aria-current="true"></button><button type="button" aria-label="สไลด์ 2"></button><button type="button" aria-label="สไลด์ 3"></button></div></div>' +
-      '<div class="sidebn"><a class="bn a" href="#live">' + icon('live') + '<h3>ไลฟ์สดโชว์สินค้าจริง</h3><p>เห็นของจริงก่อนตัดสินใจซื้อ</p></a><a class="bn b" href="#sell">' + icon('tag') + '<h3>ขายเสื้อผ้าที่ไม่ได้ใช้แล้ว</h3><p>ค่าธรรมเนียม 7% ต่อสินค้า เก็บจากผู้ขาย</p></a></div></div>' +
-      '<div class="quick">' +
-        quick('shop', 'store', 'ตลาดมือสอง') + quick('rent', 'loop', 'เช่าเสื้อผ้า') + quick('live', 'live', 'ไลฟ์สด') + quick('donate', 'gift', 'บริจาคแลกแต้ม') + quick('sell', 'tag', 'ขายเสื้อผ้า') + quick('about', 'info', 'เกี่ยวกับเรา') +
-      '</div>' +
-      '<div class="trust"><div>' + icon('idcard') + '<span><b>ยืนยันตัวตน</b>ทั้งผู้ซื้อและผู้ขาย</span></div><div>' + icon('spark') + '<span><b>AI ตรวจสอบรูปภาพ</b>ป้องกันการหลอกลวง</span></div><div>' + icon('star') + '<span><b>ประเมินผู้ขาย</b>ดูคะแนนร้านก่อนซื้อ</span></div></div>' +
-      '<div class="sec-head"><h2>หมวดหมู่</h2><a href="#shop">ดูทั้งหมด' + icon('chev') + '</a></div>' +
-      '<div class="cats">' + CATS.map(function (c) { var p = ITEMS.filter(function (i) { return i.cat === c; })[0]; return '<a class="cat" href="#shop" data-cat="' + c + '">' + art(p) + c + '</a>'; }).join('') + '</div>' +
-      '<div class="sec-head"><h2>สินค้าแนะนำ</h2><a href="#shop">ดูทั้งหมด' + icon('chev') + '</a></div>' +
-      '<div class="pgrid five">' + rec.map(card).join('') + '</div>' +
-      '<div class="sec-head"><h2>ไลฟ์สดตอนนี้</h2><a href="#live">ดูทั้งหมด' + icon('chev') + '</a></div>' +
-      '<div class="lives">' + lives.map(function (x) { var p = ITEMS.filter(function (i) { return i.seller === x.i; })[0]; return '<a class="lcard" href="#live" data-live="' + x.i + '">' + art(p) + '<span class="pill live">LIVE</span><div class="t"><b>' + esc(x.s.name) + '</b><span>โชว์สินค้าจริง ★ ' + x.s.rating + '</span></div></a>'; }).join('') + '</div>' +
-      '<div class="sec-head"><h2>เช่าเสื้อผ้า</h2><a href="#rent">ดูทั้งหมด' + icon('chev') + '</a></div>' +
-      '<div class="pgrid five">' + rentable.map(card).join('') + '</div>' +
-      '<div class="demo-note">' + icon('info') + '<span>สินค้า ร้านค้า และราคาในหน้านี้เป็นข้อมูลตัวอย่างเพื่อแสดงรูปแบบเว็บไซต์</span></div>' +
-      '</div>' + '<div style="height:48px"></div>';
+      '<div class="sidebn"><a class="bn a" href="#live">' + ic('live') + '<h3>ไลฟ์สดโชว์สินค้าจริง</h3><p>เห็นของจริงก่อนตัดสินใจซื้อ</p></a><a class="bn b" href="#sell">' + ic('tag') + '<h3>ขายครั้งแรก ไม่เก็บค่าคอม</h3><p>ลงขายไม่เกิน 5 ชิ้น มูลค่ารวมไม่เกิน ฿300 หลังจากนั้นค่าคอม 7%</p></a></div></div>' +
+      '<div class="quick">' + quick('shop', 'store', 'ตลาดมือสอง') + quick('rent', 'loop', 'เช่าเสื้อผ้า') + quick('live', 'live', 'ไลฟ์สด') + quick('donate', 'gift', 'บริจาคแลกแต้ม') + quick('promo', 'ticket', 'โค้ดส่วนลด') + quick('sell', 'tag', 'ขายเสื้อผ้า') + '</div>' +
+      '<div class="trust"><div>' + ic('idcard') + '<span><b>ยืนยันตัวตน</b>ทั้งผู้ซื้อและผู้ขาย</span></div><div>' + ic('spark') + '<span><b>AI ตรวจสอบรูปภาพ</b>ป้องกันการหลอกลวง</span></div><div>' + ic('star') + '<span><b>ประเมินผู้ขาย</b>ดูคะแนนร้านก่อนซื้อ</span></div></div>' +
+      '<div class="sec-head"><h2>สินค้ามือสองมาใหม่</h2><a href="#shop">ดูทั้งหมด' + ic('chev') + '</a></div><div class="pgrid six">' + items.map(card).join('') + '</div>' +
+      '<div class="sec-head"><h2>เช่าเสื้อผ้า</h2><a href="#rent">ดูทั้งหมด' + ic('chev') + '</a></div><div class="pgrid five">' + RENTS.map(rcard).join('') + '</div>' +
+      '<div class="sec-head"><h2>ไลฟ์สดโชว์สินค้าจริง</h2><a href="#live">ดูทั้งหมด' + ic('chev') + '</a></div><div class="lives">' + ROOMS.map(function (rm) { return '<a class="lcard" href="#live" data-room="' + rm.id + '"><span class="art" style="aspect-ratio:3/4"><img src="' + rm.poster + '" alt="' + rm.title + '" loading="lazy"></span><span class="pill live">LIVE</span><div class="t"><b>' + rm.title + '</b><span>' + rm.seller + '</span></div></a>'; }).join('') + '</div>' +
+      '<div class="band-pad"><span class="label">บริจาคแลกแต้ม</span><h2 style="font-size:clamp(1.4rem,3.4vw,2rem)">เสื้อผ้าที่ไม่ได้ใช้แล้ว เปลี่ยนเป็นแต้มส่วนลด</h2><div class="rules"><span class="rule">1 ตัว = 1 แต้ม</span><span class="rule">30 แต้ม = ฿5</span><span class="rule">นับเฉพาะเสื้อ กางเกง กระโปรง</span></div><div class="actions"><a class="btn btn-primary" href="#donate">คำนวณแต้ม</a><a class="btn btn-ghost" href="#collab">ดูจุดรับบริจาค</a></div></div>' +
+      '<div class="demo-note">' + ic('info') + '<span>สินค้า ร้านค้า คะแนน และราคาที่ไม่ได้ระบุในโจทย์เป็นข้อมูลตัวอย่างเพื่อแสดงรูปแบบเว็บไซต์</span></div></div><div style="height:48px"></div>';
   };
-  function quick(r, ic, label) { return '<a class="qitem" href="#' + r + '"><span class="ic">' + icon(ic) + '</span>' + label + '</a>'; }
 
   function filtered() {
-    var q = state.q.trim().toLowerCase();
-    var mn = parseFloat(state.min), mx = parseFloat(state.max);
-    var r = ITEMS.filter(function (it) {
-      if (q && (it.name + it.cat + SELLERS[it.seller].name).toLowerCase().indexOf(q) < 0) return false;
+    var q = state.q.trim().toLowerCase(), mn = parseFloat(state.min), mx = parseFloat(state.max);
+    var r = allItems().filter(function (it) {
+      if (q && (it.name + it.cat + sellerOf(it).name).toLowerCase().indexOf(q) < 0) return false;
       if (state.cats.length && state.cats.indexOf(it.cat) < 0) return false;
       if (state.quals.length && state.quals.indexOf(it.q) < 0) return false;
       if (state.defs.length && state.defs.indexOf(it.d) < 0) return false;
       if (isFinite(mn) && it.price < mn) return false;
       if (isFinite(mx) && it.price > mx) return false;
-      if (state.rentOnly && !it.rent) return false;
       return true;
     });
     if (state.sort === 'asc') r.sort(function (a, b) { return a.price - b.price; });
@@ -802,230 +1175,444 @@ button { font: inherit; color: inherit; }
     else r.sort(function (a, b) { return b.id - a.id; });
     return r;
   }
-  function checks(group, list, sel) {
-    return list.map(function (v) { return '<label class="check"><input type="checkbox" data-f="' + group + '" value="' + v + '"' + (sel.indexOf(v) >= 0 ? ' checked' : '') + '>' + v + '</label>'; }).join('');
-  }
-  var PRESETS = [['ต่ำกว่า ฿200', '', '200'], ['฿200 - ฿500', '200', '500'], ['฿500 - ฿1,000', '500', '1000'], ['฿1,000 ขึ้นไป', '1000', '']];
-
+  function checks(group, list, sel) { return list.map(function (v) { return '<label class="check"><input type="checkbox" data-f="' + group + '" value="' + v + '"' + (sel.indexOf(v) >= 0 ? ' checked' : '') + '>' + v + '</label>'; }).join(''); }
+  var PRESETS = [['ต่ำกว่า ฿100', '', '100'], ['฿100 - ฿300', '100', '300'], ['฿300 - ฿500', '300', '500'], ['฿500 ขึ้นไป', '500', '']];
   RENDER.shop = function () {
-    return '<div class="wrap page"><nav class="crumbs" aria-label="เส้นทาง"><a href="#home">หน้าแรก</a>' + icon('chev', 'width:.9em;height:.9em') + '<span>ตลาดมือสอง</span></nav>' +
-      '<h1 class="page-title">ตลาดมือสอง</h1><p class="page-sub">เลือกดูตามคุณภาพสินค้า ตำหนิ และราคา</p>' +
+    return '<div class="wrap page"><nav class="crumbs" aria-label="เส้นทาง"><a href="#home">หน้าแรก</a>' + CH + '<span>ตลาดมือสอง</span></nav><h1 class="page-title">ตลาดมือสอง</h1><p class="page-sub">เลือกดูตามคุณภาพสินค้า ตำหนิ และราคา</p>' +
       '<div class="shop-layout" style="margin-top:18px"><aside class="filters" id="filters" aria-label="ตัวกรองสินค้า">' +
-        '<div class="fgroup"><h4>ประเภทสินค้า</h4>' + checks('cat', CATS, state.cats) + '</div>' +
-        '<div class="fgroup"><h4>คุณภาพสินค้า</h4>' + checks('q', QS, state.quals) + '</div>' +
-        '<div class="fgroup"><h4>ตำหนิ</h4>' + checks('d', DS, state.defs) + '</div>' +
-        '<div class="fgroup"><h4>ราคา</h4><div class="pr">' + PRESETS.map(function (p, i) { return '<button type="button" data-pr="' + i + '" aria-pressed="' + (state.min === p[1] && state.max === p[2]) + '">' + p[0] + '</button>'; }).join('') + '</div>' +
-          '<div class="minmax"><input id="pmin" type="number" min="0" inputmode="numeric" placeholder="ต่ำสุด" aria-label="ราคาต่ำสุด" value="' + esc(state.min) + '"><span>-</span><input id="pmax" type="number" min="0" inputmode="numeric" placeholder="สูงสุด" aria-label="ราคาสูงสุด" value="' + esc(state.max) + '"></div></div>' +
-        '<div class="fgroup"><label class="check"><input type="checkbox" id="rentonly"' + (state.rentOnly ? ' checked' : '') + '>เฉพาะสินค้าให้เช่า</label><button class="linkbtn" type="button" data-reset>ล้างตัวกรองทั้งหมด</button></div>' +
-      '</aside><section style="min-width:0"><div class="sortbar"><button class="ftoggle" type="button" data-toggle-filters>' + icon('sliders') + 'ตัวกรอง</button><span class="count" id="count"></span>' +
-        '<label for="sort" class="count" style="flex:none;min-width:0">เรียงตาม</label><select id="sort"><option value="new">ล่าสุด</option><option value="asc">ราคา: ต่ำไปสูง</option><option value="desc">ราคา: สูงไปต่ำ</option><option value="qual">คุณภาพดีที่สุด</option></select></div>' +
-        '<div class="pgrid" id="results"></div></section></div></div>';
+      '<div class="fgroup"><h4>ประเภทสินค้า</h4>' + checks('cat', CATS, state.cats) + '</div><div class="fgroup"><h4>คุณภาพสินค้า</h4>' + checks('q', QS, state.quals) + '</div><div class="fgroup"><h4>ตำหนิ</h4>' + checks('d', DS, state.defs) + '</div>' +
+      '<div class="fgroup"><h4>ราคา</h4><div class="pr">' + PRESETS.map(function (p, i) { return '<button type="button" data-pr="' + i + '" aria-pressed="' + (state.min === p[1] && state.max === p[2]) + '">' + p[0] + '</button>'; }).join('') + '</div><div class="minmax"><input id="pmin" type="number" min="0" inputmode="numeric" placeholder="ต่ำสุด" aria-label="ราคาต่ำสุด" value="' + esc(state.min) + '"><span>-</span><input id="pmax" type="number" min="0" inputmode="numeric" placeholder="สูงสุด" aria-label="ราคาสูงสุด" value="' + esc(state.max) + '"></div></div>' +
+      '<div class="fgroup"><button class="linkbtn" type="button" data-reset>ล้างตัวกรองทั้งหมด</button></div></aside>' +
+      '<section style="min-width:0"><div class="sortbar"><button class="ftoggle" type="button" data-toggle-filters>' + ic('sliders') + 'ตัวกรอง</button><span class="count" id="count"></span><label for="sort" class="count" style="flex:none;min-width:0">เรียงตาม</label><select id="sort"><option value="new">ล่าสุด</option><option value="asc">ราคา: ต่ำไปสูง</option><option value="desc">ราคา: สูงไปต่ำ</option><option value="qual">คุณภาพดีที่สุด</option></select></div><div class="pgrid" id="results"></div></section></div></div>';
   };
   function updateResults() {
-    var r = filtered(), box = $('#results');
-    if (!box) return;
+    var r = filtered(), box = $('#results'); if (!box) return;
     $('#count').textContent = 'พบ ' + r.length + ' ชิ้น' + (state.q ? ' สำหรับ "' + state.q + '"' : '');
     box.innerHTML = r.length ? r.map(card).join('') : '<div class="empty" style="grid-column:1/-1"><h3>ไม่พบสินค้าที่ตรงกับตัวกรอง</h3><p>ลองปรับคุณภาพ ตำหนิ หรือช่วงราคา</p><button class="btn btn-ghost" type="button" data-reset style="margin-top:14px">ล้างตัวกรอง</button></div>';
     $$('[data-pr]').forEach(function (b) { var p = PRESETS[+b.getAttribute('data-pr')]; b.setAttribute('aria-pressed', String(state.min === p[1] && state.max === p[2])); });
   }
-  function afterShop() { var s = $('#sort'); if (s) s.value = state.sort; updateResults(); }
+  AFTER.shop = function () { var s = $('#sort'); if (s) s.value = state.sort; updateResults(); };
 
-  function priceNow(it) { return itemMode === 'rent' && it.rent ? it.rent * itemDays : it.price; }
   RENDER.item = function (id) {
     var it = byId(id);
     if (!it) return '<div class="wrap page"><div class="empty"><h3>ไม่พบสินค้านี้</h3><a class="btn btn-primary" href="#shop">กลับไปตลาดมือสอง</a></div></div>';
-    if (itemFor !== id) { itemFor = id; itemMode = 'buy'; itemDays = 3; }
-    var s = SELLERS[it.seller], lo = Math.round(it.price * 0.9 / 10) * 10, hi = Math.round(it.price * 1.1 / 10) * 10;
-    var others = ITEMS.filter(function (i) { return i.id !== id && (i.seller === it.seller || i.cat === it.cat); }).slice(0, 5);
-    var rentCtl = it.rent ? '<div class="seg" role="group" aria-label="เลือกซื้อหรือเช่า"><button type="button" data-mode="buy" aria-pressed="' + (itemMode === 'buy') + '">ซื้อ</button><button type="button" data-mode="rent" aria-pressed="' + (itemMode === 'rent') + '">เช่า</button></div>' +
-      (itemMode === 'rent' ? '<div class="rentrow"><label for="days">ระยะเวลาเช่า</label><select id="days">' + [3, 5, 7].map(function (d) { return '<option value="' + d + '"' + (d === itemDays ? ' selected' : '') + '>' + d + ' วัน</option>'; }).join('') + '</select><span class="small">' + fmt(it.rent) + ' ต่อวัน</span></div>' : '') : '';
-    var actions = '<button class="btn btn-ghost" type="button" data-add="' + id + '">' + icon('cart') + 'ใส่ตะกร้า</button><button class="btn btn-primary" type="button" data-buy="' + id + '">' + (itemMode === 'rent' ? 'เช่าเลย' : 'ซื้อเลย') + '</button>';
-    return '<div class="wrap page"><nav class="crumbs" aria-label="เส้นทาง"><a href="#home">หน้าแรก</a>' + icon('chev', 'width:.9em;height:.9em') + '<a href="#shop" data-cat="' + it.cat + '">' + it.cat + '</a>' + icon('chev', 'width:.9em;height:.9em') + '<span>' + esc(it.name) + '</span></nav>' +
-      '<div class="item-grid"><div class="gallery">' + art(it) + '<p class="cap">ภาพประกอบตัวอย่าง ในระบบจริงผู้ขายจะอัปโหลดรูปสินค้าจริง</p></div>' +
-      '<div class="item-info"><h1>' + esc(it.name) + '</h1><div class="tagrow">' + badges(it) + '<span class="qb q-2">ขนาด ' + it.size + '</span>' + (liveOf(it) ? '<span class="pill live">LIVE</span>' : '') + '</div>' +
-      '<div class="pricebox"><div class="big">' + fmt(priceNow(it)) + '</div><div class="small">' + (itemMode === 'rent' ? 'ค่าเช่า ' + itemDays + ' วัน' : 'ราคาสินค้ามือสอง ชิ้นเดียว') + '</div>' + rentCtl + '</div>' +
-      '<div class="buyrow">' + actions + '</div>' +
-      '<div class="panel"><h3>' + icon('spark') + 'AI ประเมินสินค้า</h3><dl class="kv"><div><dt>ประเภทที่ AI คัดแยก</dt><dd>' + it.cat + '</dd></div><div><dt>ช่วงราคามือสองที่ประเมิน</dt><dd>' + fmt(lo) + ' - ' + fmt(hi) + '</dd></div><div><dt>คุณภาพสินค้า</dt><dd>' + it.q + '</dd></div><div><dt>ตำหนิ</dt><dd>' + it.d + '</dd></div></dl>' + (it.note ? '<p class="note">ตำหนิที่แจ้ง: ' + esc(it.note) + '</p>' : '') + '</div>' +
-      '<div class="panel"><h3>' + icon('shield') + 'ความปลอดภัย</h3><div class="okline">' + icon('check') + '<span>ผู้ขายยืนยันตัวตนแล้ว</span></div><div class="okline">' + icon('check') + '<span>' + (it.ai ? 'AI ตรวจสอบรูปภาพแล้ว ไม่พบความผิดปกติ' : 'AI กำลังตรวจสอบรูปภาพ') + '</span></div>' + (liveOf(it) ? '<div class="okline">' + icon('live') + '<span>ผู้ขายกำลังไลฟ์สด <a href="#live" data-live="' + it.seller + '" style="color:var(--blue-strong)">ดูสินค้าจริง</a></span></div>' : '') + '</div>' +
-      '<div class="panel"><div class="sellercard"><span class="avatar" aria-hidden="true">' + esc(s.name.charAt(0)) + '</span><div class="meta"><b>' + esc(s.name) + icon('shield') + '</b><span>ยืนยันตัวตนแล้ว · คะแนนผู้ขาย ★ ' + s.rating + '</span></div><a class="btn btn-ghost" href="#shop" data-seller="' + esc(s.name) + '">ดูสินค้าในร้าน</a></div></div>' +
-      '</div></div>' +
-      '<div class="sec-head"><h2>สินค้าที่คุณอาจสนใจ</h2><a href="#shop">ดูทั้งหมด' + icon('chev') + '</a></div><div class="pgrid five">' + others.map(card).join('') + '</div></div>' +
-      '<div class="buybar">' + actions + '</div>';
-  };
-
-  function cartTotal() { return cart.reduce(function (t, c) { var it = byId(c.id); return t + (c.mode === 'rent' ? it.rent * c.days : it.price); }, 0); }
-  RENDER.cart = function () {
-    var head = '<div class="wrap page"><nav class="crumbs" aria-label="เส้นทาง"><a href="#home">หน้าแรก</a>' + icon('chev', 'width:.9em;height:.9em') + '<span>ตะกร้าสินค้า</span></nav><h1 class="page-title">ตะกร้าสินค้า</h1>';
-    if (!cart.length) return head + '<div class="empty" style="margin-top:18px"><h3>ตะกร้ายังว่างอยู่</h3><p>เลือกเสื้อผ้ามือสองที่ถูกใจ แล้วใส่ตะกร้าได้เลย</p><a class="btn btn-primary" href="#shop" style="margin-top:14px">ไปเลือกซื้อ</a></div></div>';
-    var groups = {};
-    cart.forEach(function (c) { var it = byId(c.id); (groups[it.seller] = groups[it.seller] || []).push(c); });
-    var rows = Object.keys(groups).map(function (k) {
-      return '<div class="cgroup"><h3>' + icon('store') + esc(SELLERS[k].name) + icon('shield') + '</h3>' + groups[k].map(function (c) {
-        var it = byId(c.id), p = c.mode === 'rent' ? it.rent * c.days : it.price;
-        return '<div class="crow">' + art(it) + '<div style="min-width:0"><a class="nm" href="#item-' + it.id + '">' + esc(it.name) + '</a><small>' + (c.mode === 'rent' ? 'เช่า ' + c.days + ' วัน' : 'ซื้อ') + ' · ' + it.q + ' · ' + it.d + '</small><button class="rm" type="button" data-remove="' + it.id + '">' + icon('trash') + 'นำออก</button></div><div class="pp">' + fmt(p) + '</div></div>';
-      }).join('') + '</div>';
-    }).join('');
-    return head + '<div class="cart-grid"><div>' + rows + '</div><aside class="summary"><h3 style="margin-bottom:8px">สรุปคำสั่งซื้อ</h3><div class="row"><span>สินค้า ' + cart.length + ' ชิ้น</span><span>' + fmt(cartTotal()) + '</span></div><div class="row"><span>ส่วนลดจากแต้ม</span><span>ใช้ได้เมื่อมีแต้ม</span></div><div class="row total"><span>รวมทั้งหมด</span><b>' + fmt(cartTotal()) + '</b></div><button class="btn btn-primary btn-block" type="button" data-checkout style="margin-top:12px">ชำระเงิน</button><p class="note">ขั้นตอนชำระเงินยังเป็นตัวอย่าง ยังไม่เชื่อมระบบจริง</p></aside></div></div>';
+    var s = sellerOf(it), lo = (it.ai && it.ai.lo) || Math.round(it.price * 0.8 / 10) * 10, hi = (it.ai && it.ai.hi) || Math.round(it.price * 1.2 / 10) * 10;
+    var room = inLive(it);
+    var others = allItems().filter(function (i) { return i.id !== id; }).slice(0, 5);
+    var acts = '<button class="btn btn-ghost" type="button" data-add="' + id + '">' + ic('cart') + 'ใส่ตะกร้า</button><button class="btn btn-primary" type="button" data-buy="' + id + '">ซื้อเลย</button>';
+    return '<div class="wrap page"><nav class="crumbs" aria-label="เส้นทาง"><a href="#home">หน้าแรก</a>' + CH + '<a href="#shop" data-cat="' + it.cat + '">' + it.cat + '</a>' + CH + '<span>' + esc(it.name) + '</span></nav>' +
+      '<div class="item-grid"><div class="gallery">' + art(it, 'fit') + '<p class="cap">รูปสินค้า' + (it.mine ? ' ที่ผู้ขายอัปโหลด' : 'จริงจากผู้ขาย') + '</p></div>' +
+      '<div class="item-info"><h1>' + esc(it.name) + '</h1><div class="tagrow">' + badges(it) + (it.size ? '<span class="qb q-2">ไซส์ ' + esc(it.size) + '</span>' : '') + (room ? '<span class="pill live">LIVE</span>' : '') + '</div>' +
+      '<div class="pricebox"><div class="big">' + fmt(it.price) + '</div><div class="small">ราคาสินค้ามือสอง ชิ้นเดียว</div></div><div class="buyrow">' + acts + '</div>' +
+      '<div class="panel"><h3>' + ic('spark') + 'AI ประเมินสินค้า (ตัวอย่าง)</h3><dl class="kv"><div><dt>ประเภทที่ AI คัดแยก</dt><dd>' + it.cat + '</dd></div><div><dt>ช่วงราคามือสองที่ประเมิน</dt><dd>' + fmt(lo) + ' - ' + fmt(hi) + '</dd></div><div><dt>คุณภาพสินค้า</dt><dd>' + it.q + '</dd></div><div><dt>ตำหนิ</dt><dd>' + it.d + '</dd></div></dl>' + (it.note ? '<p class="note">ตำหนิที่แจ้ง: ' + esc(it.note) + '</p>' : '') + '</div>' +
+      '<div class="panel"><h3>' + ic('shield') + 'ความปลอดภัย</h3><div class="okline">' + ic('check') + '<span>ผู้ขายยืนยันตัวตนแล้ว</span></div><div class="okline">' + ic('check') + '<span>AI ตรวจสอบรูปภาพแล้ว ไม่พบความผิดปกติ</span></div>' + (room ? '<div class="okline">' + ic('live') + '<span>ผู้ขายกำลังไลฟ์สด <a href="#live" data-room="' + room.id + '" style="color:var(--blue-strong)">ดูสินค้าจริง</a></span></div>' : '') + '</div>' +
+      '<div class="panel"><div class="sellercard"><span class="avatar" aria-hidden="true">' + esc(s.name.charAt(s.name.length - 1)) + '</span><div class="meta"><b>' + esc(s.name) + ic('shield') + '</b><span>ยืนยันตัวตนแล้ว' + (s.rating !== '-' ? ' · คะแนนผู้ขาย ★ ' + s.rating : '') + '</span></div></div></div>' +
+      '</div></div><div class="sec-head"><h2>สินค้าที่คุณอาจสนใจ</h2><a href="#shop">ดูทั้งหมด' + ic('chev') + '</a></div><div class="pgrid five">' + others.map(card).join('') + '</div></div><div class="buybar">' + acts + '</div>';
   };
 
   RENDER.rent = function () {
-    var list = ITEMS.filter(function (i) { return i.rent; });
-    return '<div class="wrap page"><nav class="crumbs" aria-label="เส้นทาง"><a href="#home">หน้าแรก</a>' + icon('chev', 'width:.9em;height:.9em') + '<span>เช่าเสื้อผ้า</span></nav><h1 class="page-title">ศูนย์รวมการเช่าเสื้อผ้า</h1><p class="page-sub">รวมสินค้าเสื้อผ้าให้เช่าไว้ในที่เดียว เลือกระยะเวลาเช่าได้ในหน้าสินค้า</p><div class="pgrid five" style="margin-top:20px">' + list.map(card).join('') + '</div></div>';
+    return '<div class="wrap page"><nav class="crumbs" aria-label="เส้นทาง"><a href="#home">หน้าแรก</a>' + CH + '<span>เช่าเสื้อผ้า</span></nav><h1 class="page-title">ศูนย์รวมการเช่าเสื้อผ้า</h1><p class="page-sub">เลือกเช่าได้ 1, 2, 3 หรือ 5 วัน ยิ่งเช่านาน ราคาเฉลี่ยต่อวันยิ่งถูก</p><div class="pgrid five" style="margin-top:20px">' + RENTS.map(rcard).join('') + '</div></div>';
+  };
+  RENDER.rentitem = function (id) {
+    var r = rentById(id);
+    if (!r) return '<div class="wrap page"><div class="empty"><h3>ไม่พบสินค้านี้</h3><a class="btn btn-primary" href="#rent">กลับไปหน้าเช่า</a></div></div>';
+    var d = rentSel[id] || 1, g = gal[id] || 0, p = rentPrice(r, d);
+    var acts = '<button class="btn btn-ghost" type="button" data-addrent="' + id + '">' + ic('cart') + 'ใส่ตะกร้า</button><button class="btn btn-primary" type="button" data-buyrent="' + id + '">เช่าเลย</button>';
+    return '<div class="wrap page"><nav class="crumbs" aria-label="เส้นทาง"><a href="#home">หน้าแรก</a>' + CH + '<a href="#rent">เช่าเสื้อผ้า</a>' + CH + '<span>' + esc(r.name) + '</span></nav>' +
+      '<div class="item-grid"><div class="gallery"><img class="gimg" src="' + (g ? r.card : r.img) + '" alt="' + esc(r.name) + (g ? ' พร้อมตารางราคา' : '') + '"><div class="thumbs"><button type="button" data-gal="' + id + ':0" aria-pressed="' + (g === 0) + '" aria-label="รูปสินค้า"><img src="' + r.img + '" alt=""></button><button type="button" data-gal="' + id + ':1" aria-pressed="' + (g === 1) + '" aria-label="การ์ดราคาเช่า"><img src="' + r.card + '" alt=""></button></div></div>' +
+      '<div class="item-info"><h1>' + esc(r.name) + '</h1><div class="tagrow"><span class="pill rent">เช่าได้</span><span class="qb q-2">' + r.type + '</span><span class="qb q-1">ไซส์ ' + esc(r.size) + '</span></div>' +
+      '<div class="pricebox"><div class="big">' + fmt(p) + '</div><div class="small">ค่าเช่า ' + d + ' วัน · เฉลี่ย ' + fmt(r2(p / d)) + ' ต่อวัน</div><div class="tiers" role="group" aria-label="เลือกระยะเวลาเช่า">' + DAYS.map(function (x) { return '<button class="tier" type="button" data-tier="' + id + ':' + x + '" aria-pressed="' + (x === d) + '"><small>' + x + ' วัน</small><b>' + fmt(rentPrice(r, x)) + '</b></button>'; }).join('') + '</div></div>' +
+      '<div class="buyrow">' + acts + '</div>' +
+      '<div class="panel"><h3>' + ic('tag') + 'รายละเอียดชุด</h3><dl class="kv"><div><dt>แบรนด์ / ร้าน</dt><dd>' + esc(r.brand) + '</dd></div><div><dt>ประเภท</dt><dd>' + r.type + '</dd></div><div><dt>ไซส์</dt><dd>' + esc(r.size) + '</dd></div><div><dt>สัดส่วน (นิ้ว)</dt><dd style="max-width:60%">' + esc(r.spec) + '</dd></div></dl><p class="note">B = อก, W = เอว, H = สะโพก, L = ความยาว</p></div>' +
+      '<div class="panel"><h3>' + ic('shield') + 'ความปลอดภัย</h3><div class="okline">' + ic('check') + '<span>ร้านให้เช่ายืนยันตัวตนแล้ว</span></div><div class="okline">' + ic('check') + '<span>AI ตรวจสอบรูปภาพแล้ว ไม่พบความผิดปกติ</span></div></div>' +
+      '</div></div><div class="sec-head"><h2>ชุดเช่าอื่น ๆ</h2><a href="#rent">ดูทั้งหมด' + ic('chev') + '</a></div><div class="pgrid five">' + RENTS.filter(function (x) { return x.id !== id; }).map(rcard).join('') + '</div></div><div class="buybar">' + acts + '</div>';
   };
 
   RENDER.live = function () {
-    var cur = SELLERS[state.liveSeller], mine = ITEMS.filter(function (i) { return i.seller === state.liveSeller; }), hero = mine[0];
-    var picks = SELLERS.map(function (s, i) { return s.live ? '<button type="button" data-live="' + i + '" aria-pressed="' + (i === state.liveSeller) + '"><span class="dot"></span>' + esc(s.name) + '</button>' : ''; }).join('');
-    return '<div class="wrap page"><nav class="crumbs" aria-label="เส้นทาง"><a href="#home">หน้าแรก</a>' + icon('chev', 'width:.9em;height:.9em') + '<span>ไลฟ์สด</span></nav><h1 class="page-title">ไลฟ์สดโชว์สินค้าจริง</h1><p class="page-sub">ผู้ขายไลฟ์สดโชว์สินค้าจริง ให้ผู้ซื้อเห็นสภาพก่อนตัดสินใจ</p>' +
-      '<div class="lpick" style="margin-top:18px">' + picks + '</div>' +
-      '<div class="stage-grid"><div class="stage">' + art(hero) + '<span class="pill live">LIVE</span><div class="bar"><b>' + esc(cur.name) + '</b><span>กำลังโชว์สินค้าจริง · ผู้ขายยืนยันตัวตนแล้ว</span></div></div>' +
-      '<div class="pinned"><h3>สินค้าในไลฟ์นี้</h3>' + mine.map(function (it) { return '<div class="pin">' + art(it) + '<div style="min-width:0"><a href="#item-' + it.id + '">' + esc(it.name) + '</a><small>' + fmt(it.price) + '</small></div><button class="padd" type="button" data-add="' + it.id + '" aria-label="ใส่ตะกร้า ' + esc(it.name) + '">' + icon('plus') + '</button></div>'; }).join('') + '</div></div>' +
-      '<div class="demo-note">' + icon('info') + '<span>หน้าไลฟ์สดเป็นภาพจำลองรูปแบบการแสดงสินค้า ยังไม่มีวิดีโอจริง</span></div></div>';
+    var rm = ROOMS[roomSel - 1];
+    return '<div class="wrap page"><nav class="crumbs" aria-label="เส้นทาง"><a href="#home">หน้าแรก</a>' + CH + '<span>ไลฟ์สด</span></nav><h1 class="page-title">ไลฟ์สดโชว์สินค้าจริง</h1><p class="page-sub">ผู้ขายไลฟ์สดโชว์สินค้าจริง ให้ผู้ซื้อเห็นสภาพของก่อนตัดสินใจ</p>' +
+      '<div class="live-grid"><div><div class="phone"><video id="lv" src="' + rm.video + '" poster="' + rm.poster + '" muted loop playsinline controls preload="metadata" aria-label="วิดีโอ' + rm.title + '"></video><span class="pill live">LIVE</span></div></div>' +
+      '<div class="livebox"><div><h2 style="font-size:1.3rem;margin-bottom:10px">เลือกห้องไลฟ์</h2><div class="rooms">' + ROOMS.map(function (x) { return '<button class="room" type="button" data-room="' + x.id + '" aria-pressed="' + (x.id === roomSel) + '"><img src="' + x.poster + '" alt=""><span class="pill live">LIVE</span><span>' + x.title + '<br><small style="font-family:var(--font-body);color:var(--ink-soft)">' + x.seller + '</small></span></button>'; }).join('') + '</div></div>' +
+      '<div class="pinned"><h3>สินค้าที่ปักหมุดในห้องนี้</h3>' + rm.items.map(function (iid) { var it = byId(iid); return '<div class="pin">' + art(it) + '<div style="min-width:0"><a href="#item-' + it.id + '">' + esc(it.name) + '</a><small>' + fmt(it.price) + '</small></div><button class="padd" type="button" data-add="' + it.id + '" aria-label="ใส่ตะกร้า ' + esc(it.name) + '">' + ic('plus') + '</button></div>'; }).join('') + '</div>' +
+      '<div class="demo-note">' + ic('info') + '<span>วิดีโอเป็นตัวอย่างการแสดงสินค้าระหว่างไลฟ์ ปิดบังชื่อผู้ชมแล้ว สินค้าที่ปักหมุดเป็นตัวอย่างจากร้านตัวอย่างในเว็บไซต์</span></div></div></div></div>';
+  };
+  AFTER.live = function () {
+    var v = $('#lv'); if (!v) return;
+    v.muted = true;
+    var p = v.play(); if (p && p.catch) p.catch(function () { /* autoplay may be blocked */ });
   };
 
+  var CHANNELS = [
+    { id: 'online', t: 'รับผ่านออนไลน์', s: 'แจ้งจำนวนที่นี่ แล้วส่งเสื้อผ้ามาให้ Loopwear', on: true },
+    { id: 'store', t: 'จุดรับที่ Big C / Lotus\'s', s: 'อยู่ระหว่างวางแผนความร่วมมือ ยังไม่เปิดใช้', on: false },
+    { id: 'found', t: 'ส่งต่อให้มูลนิธิรับบริจาคเสื้อ', s: 'Loopwear คัดแยกแล้วส่งต่อให้มูลนิธิ', on: true }
+  ];
+  function donCalc() {
+    var pts = don.shirt + don.pants + don.skirt, blocks = Math.floor(pts / 30);
+    return { pts: pts, blocks: blocks, baht: blocks * 5, rem: pts % 30, next: 30 - (pts % 30 || 30) };
+  }
+  function donRow(key, label, hint, sym, counted) {
+    return '<div class="drow"><span class="gi"><svg class="garm" viewBox="0 0 100 100" aria-hidden="true"><use href="#g-' + sym + '" fill="#8FB0DA"/></svg></span><div><b>' + label + '</b><span class="nocount">' + hint + '</span></div>' +
+      '<div class="stepper"><button type="button" data-step="' + key + ':-1" aria-label="ลด' + label + '">' + ic('minus') + '</button><input id="dn-' + key + '" type="number" min="0" max="999" inputmode="numeric" value="' + don[key] + '" aria-label="จำนวน' + label + '"><button type="button" data-step="' + key + ':1" aria-label="เพิ่ม' + label + '">' + ic('plus') + '</button></div></div>';
+  }
   RENDER.donate = function () {
-    return '<div class="wrap page"><nav class="crumbs" aria-label="เส้นทาง"><a href="#home">หน้าแรก</a>' + icon('chev', 'width:.9em;height:.9em') + '<span>บริจาคแลกแต้ม</span></nav><h1 class="page-title">บริจาคแลกแต้ม x มูลนิธิ</h1><p class="page-sub">ร่วมบริจาคกับมูลนิธิผ่าน Loopwear แล้วสะสมแต้มไว้ใช้เป็นส่วนลด</p>' +
-      '<ol class="flow"><li><span class="node">' + icon('heart', 'width:26px;height:26px') + '</span><h3>บริจาคร่วมกับมูลนิธิ</h3><p>ร่วมบริจาคผ่านแคมเปญของ Loopwear ที่จัดร่วมกับมูลนิธิ</p></li><li><span class="node">' + icon('coin', 'width:26px;height:26px') + '</span><h3>รับแต้มสะสม</h3><p>ทุกการบริจาคแลกเป็นแต้ม เก็บไว้ใช้ได้ในภายหลัง</p></li><li><span class="node">' + icon('gift', 'width:26px;height:26px') + '</span><h3>ใช้แต้มเป็นส่วนลด</h3><p>นำแต้มไปใช้ได้ 2 ทาง</p></li></ol>' +
-      '<div class="two"><div class="panel" style="margin:0"><h3>' + icon('tag') + 'สำหรับผู้ขาย</h3><p>ใช้แต้มเพื่อลดค่าธรรมเนียม 7% ต่อสินค้า</p><a class="btn btn-ghost" href="#sell" style="margin-top:14px">ไปหน้าขายเสื้อผ้า</a></div><div class="panel" style="margin:0"><h3>' + icon('cart') + 'สำหรับผู้ซื้อ</h3><p>ใช้แต้มเป็นส่วนลดการซื้อสินค้า</p><a class="btn btn-ghost" href="#shop" style="margin-top:14px">ไปเลือกซื้อสินค้า</a></div></div></div>';
+    var done = don.done;
+    return '<div class="wrap page"><nav class="crumbs" aria-label="เส้นทาง"><a href="#home">หน้าแรก</a>' + CH + '<span>บริจาคแลกแต้ม</span></nav><h1 class="page-title">บริจาคเสื้อผ้า แลกแต้ม</h1><p class="page-sub">นำเสื้อผ้ามาบริจาคกับเรา เราจะคัดแยกและส่งต่อให้กับมูลนิธิ ส่วนคุณได้แต้มไว้ใช้เป็นส่วนลด</p>' +
+      '<div class="rules"><span class="rule">1 ตัว = 1 แต้ม</span><span class="rule">ทุก 30 แต้ม = ฿5</span><span class="rule">นับเฉพาะเสื้อ กางเกง กระโปรง</span></div>' +
+      '<div class="dgrid"><div class="sect">' + (done ? '<div class="success">' + ic('check') + '<span>บันทึกการบริจาคแล้ว ได้รับ ' + num(done.pts) + ' แต้ม ต้นแบบนี้เพิ่มแต้มให้ทันที ในระบบจริงแต้มจะเข้าหลังจากที่เราตรวจรับและคัดแยกแล้ว</span></div>' : '') +
+      '<h2>' + ic('box') + 'แจ้งจำนวนที่จะบริจาค</h2>' +
+      donRow('shirt', 'เสื้อ', 'นับ 1 ตัว = 1 แต้ม', 'tee') + donRow('pants', 'กางเกง', 'นับ 1 ตัว = 1 แต้ม', 'pants') + donRow('skirt', 'กระโปรง', 'นับ 1 ตัว = 1 แต้ม', 'skirt') + donRow('other', 'อื่น ๆ เช่น เดรส แจ็คเก็ต', 'รับบริจาคได้ แต่ไม่นับแต้ม', 'dress') +
+      '<h3 style="font-size:1.05rem;margin:18px 0 4px">ช่องทางส่งมอบ</h3><div class="opts" role="radiogroup" aria-label="ช่องทางส่งมอบ">' + CHANNELS.map(function (c) { return '<label class="opt' + (c.on ? '' : ' is-off') + '"><input type="radio" name="channel" value="' + c.id + '"' + (don.channel === c.id ? ' checked' : '') + (c.on ? '' : ' disabled') + '><span><b style="font-family:var(--font-display);font-weight:500">' + c.t + '</b><small>' + c.s + '</small></span></label>'; }).join('') + '</div>' +
+      '<p class="hint" style="margin-top:12px">กรุณาแยกเสื้อและกางเกงใส่คนละถุงก่อนส่งมอบ <a class="ext" href="#collab">ดูรายละเอียดจุดรับ</a></p></div>' +
+      '<aside class="result" aria-live="polite"><span>แต้มที่จะได้รับ</span><div class="big" id="d-pts">0</div><div class="pbar" aria-hidden="true"><span id="d-bar"></span></div><small id="d-next"></small><div class="row"><span>มูลค่าส่วนลด</span><b id="d-baht">฿0</b></div><small id="d-other"></small><button class="btn btn-light btn-block" type="button" data-donsubmit>ยืนยันการบริจาค</button>' + (user ? '<small>แต้มสะสมตอนนี้ ' + num(user.points) + ' แต้ม</small>' : '<small>ต้องเข้าสู่ระบบก่อนยืนยันการบริจาค</small>') + '</aside></div>' +
+      '<ol class="flow"><li><span class="node">' + ic('box', 'width:26px;height:26px') + '</span><h3>แยกเสื้อและกางเกง</h3><p>แยกใส่คนละถุง เพื่อให้คัดแยกได้ไว</p></li><li><span class="node">' + ic('loop', 'width:26px;height:26px') + '</span><h3>ส่งให้ Loopwear คัดแยก</h3><p>เรานับจำนวนและคัดแยกเสื้อผ้าที่รับบริจาค</p></li><li><span class="node">' + ic('heart', 'width:26px;height:26px') + '</span><h3>ส่งต่อให้มูลนิธิ</h3><p>เสื้อผ้าไปถึงมือผู้ที่ต้องการ แต้มเข้าบัญชีคุณ</p></li></ol></div>';
+  };
+  function updateDonate() {
+    var c = donCalc(); if (!$('#d-pts')) return;
+    $('#d-pts').textContent = num(c.pts);
+    $('#d-baht').textContent = fmt(c.baht);
+    $('#d-bar').style.width = (c.pts === 0 ? 0 : (c.rem === 0 ? 100 : (c.rem / 30) * 100)) + '%';
+    $('#d-next').textContent = c.pts === 0 ? 'เริ่มนับเมื่อเพิ่มเสื้อ กางเกง หรือกระโปรง' : (c.rem === 0 ? 'ครบ ' + c.blocks + ' รอบ รอบละ 30 แต้ม' : 'อีก ' + (30 - c.rem) + ' แต้ม จะได้ส่วนลดเพิ่ม ฿5');
+    $('#d-other').textContent = don.other > 0 ? 'ชิ้นส่วนที่ไม่นับแต้ม ' + don.other + ' ชิ้น' : '';
+  }
+  AFTER.donate = updateDonate;
+
+  RENDER.collab = function () {
+    return '<div class="wrap page"><nav class="crumbs" aria-label="เส้นทาง"><a href="#home">หน้าแรก</a>' + CH + '<span>Collaboration</span></nav><h1 class="page-title">Collaboration: จุดรับเสื้อผ้าบริจาค</h1><p class="page-sub">ข้อมูลช่องทางนำเสื้อผ้ามาบริจาค เพื่อให้ Loopwear คัดแยกและส่งต่อให้มูลนิธิ</p>' +
+      '<div class="bins"><div class="bin"><svg class="garm" viewBox="0 0 100 100" aria-hidden="true"><use href="#g-tee" fill="#CFE0F3"/></svg><b>ถุงที่ 1: เสื้อ</b><span>เสื้อทุกประเภทรวมกัน</span></div><div class="bin"><svg class="garm" viewBox="0 0 100 100" aria-hidden="true"><use href="#g-pants" fill="#CFE0F3"/></svg><b>ถุงที่ 2: กางเกง</b><span>กางเกงทุกประเภทรวมกัน</span></div></div>' +
+      '<p class="hint" style="margin-top:10px">ทุกจุดรับให้แยกกางเกงกับเสื้อ กระโปรงนับแต้มเช่นเดียวกัน แยกใส่ถุงที่ 1 หรือ 2 ตามที่จุดรับแนะนำ</p>' +
+      '<div class="chans"><article class="chan"><span class="ico">' + ic('box') + '</span><span class="statusb ready">เปิดใช้งานในต้นแบบ</span><h3>รับผ่านออนไลน์</h3><p>แจ้งจำนวนเสื้อ กางเกง กระโปรงที่หน้าบริจาคแลกแต้ม แล้วส่งมาให้ Loopwear</p><a class="btn btn-ghost" href="#donate">ไปหน้าบริจาค</a></article>' +
+      '<article class="chan"><span class="ico">' + ic('pin') + '</span><span class="statusb plan">อยู่ระหว่างวางแผน</span><h3>Big C / Lotus\'s</h3><p>จุดรับเสื้อผ้าที่สาขาของทั้งสองแบรนด์ ยังไม่มีการยืนยันความร่วมมือ ดูสิ่งที่แบรนด์เคยทำด้านล่าง</p></article>' +
+      '<article class="chan"><span class="ico">' + ic('heart') + '</span><span class="statusb ready">ปลายทางของเสื้อผ้า</span><h3>ส่งให้มูลนิธิรับบริจาคเสื้อ</h3><p>Loopwear คัดแยกเสื้อผ้าที่รับบริจาคแล้วส่งต่อให้มูลนิธิ ดูตัวอย่างมูลนิธิที่รับเสื้อผ้าด้านล่าง</p></article></div>' +
+      '<div class="band-pad"><span class="label">สิ่งที่ Big C และ Lotus\'s เคยทำ</span><h2 style="font-size:clamp(1.3rem,3vw,1.8rem)">ผลการค้นหาโครงการบริจาคของสองแบรนด์</h2>' +
+      '<div class="twocol"><div class="src"><b>Big C</b><p>จัดโครงการ Big C Big Charity ร่วมกับเซอร์เทนตี้และไลฟ์รี่ สมทบทุนบริจาคผ้าอ้อมผู้ใหญ่ให้มูลนิธิวัยวัฒนานิวาส (ปีที่ 4)</p><a class="ext" href="https://corporate.bigc.co.th/news/313/bigwallet?lang=en" target="_blank" rel="noopener">ที่มา: Big C Corporate</a></div>' +
+      '<div class="src"><b>Lotus\'s (CP AXTRA)</b><p>CP AXTRA ร่วมกับ PTT เปิดโครงการเก็บขวดพลาสติกเพื่อนำไปทำเสื้อกีฬาเยาวชนและชุดนักเรียน และมีโครงการแบ่งปันอาหารกับผู้ที่ต้องการ</p><a class="ext" href="https://www.khaosodenglish.com/sponsored/2025/03/19/cp-axtra-ptt-launch-bottle-collection-program-to-upcycle-into-youth-sports-jerseys/" target="_blank" rel="noopener">ที่มา: Khaosod English</a></div></div>' +
+      '<p class="hint" style="margin-top:14px">จากการค้นหา ยังไม่พบโครงการรับเสื้อผ้าใช้แล้วของ Big C และ Lotus\'s จึงต้องติดต่อทั้งสองแห่งเพื่อยืนยันก่อนเปิดจุดรับจริง</p></div>' +
+      '<h2 style="font-size:clamp(1.3rem,3vw,1.8rem);margin-top:36px">ตัวอย่างโครงการและมูลนิธิที่รับเสื้อผ้า</h2><p class="page-sub">ใช้เป็นแนวทางเลือกปลายทาง ยังไม่ใช่พันธมิตรที่ตกลงกันแล้ว</p>' +
+      '<div class="srclist"><div class="src"><b>Otteri Wash &amp; Dry: โครงการ "ซักเพื่อให้" ครั้งที่ 2 (กันยายน 2565)</b><p>รับเสื้อผ้าแฟชั่น ชุดนักเรียน ผ้าขนหนู และตุ๊กตา ที่ 218 สาขาทั่วประเทศ ส่งต่อผ่านมูลนิธิกระจกเงา <a class="ext" href="https://www.thaipost.net/hi-light/219848/" target="_blank" rel="noopener">ที่มา: Thai Post</a></p></div>' +
+      '<div class="src"><b>มูลนิธิกระจกเงา</b><p>รับบริจาคของทั่วไป เพื่อช่วยผู้ที่เดือดร้อน</p></div>' +
+      '<div class="src"><b>มูลนิธิสวนแก้ว (นนทบุรี)</b><p>รับเสื้อผ้า เครื่องใช้ไฟฟ้า เฟอร์นิเจอร์เก่า และหนังสือเก่า รับถึงที่ได้เมื่อแจ้งล่วงหน้า</p></div>' +
+      '<div class="src"><b>มูลนิธิบ้านนกขมิ้น (กรุงเทพฯ)</b><p>รับเสื้อผ้าและของใช้สภาพดี</p></div>' +
+      '<div class="src"><b>มูลนิธิธรรมะห่มดอย (เชียงใหม่)</b><p>รับรองเท้า กระเป๋า เสื้อแขนยาว กางเกง และเสื้อผ้าอื่น ๆ ทั้งใหม่และใช้เล็กน้อย เพื่อส่งให้ชุมชนบนดอย</p></div></div>' +
+      '<p class="hint" style="margin-top:12px">ข้อมูลมูลนิธิจากบทความของ Shopee Blog (เผยแพร่ปี 2562 อัปเดตปี 2567) <a class="ext" href="https://shopee.co.th/blog/great-places-donate-clothes" target="_blank" rel="noopener">ดูบทความ</a> กรุณาตรวจสอบเงื่อนไขและช่องทางล่าสุดกับมูลนิธิก่อนส่งทุกครั้ง</p></div>';
   };
 
+  RENDER.promo = function () {
+    return '<div class="wrap page"><nav class="crumbs" aria-label="เส้นทาง"><a href="#home">หน้าแรก</a>' + CH + '<span>โค้ดส่วนลด</span></nav><h1 class="page-title">ศูนย์โค้ดส่วนลด</h1><p class="page-sub">เก็บโค้ดไว้ในบัญชี แล้วใช้ได้อัตโนมัติเมื่อเข้าเงื่อนไข</p>' +
+      '<h2 style="font-size:1.3rem;margin:26px 0 12px">ช่วงเปิดตัว</h2><div class="acc-grid" style="margin-top:0">' + ticket('WELCOME10') + ticket('LOOPFIRST') + '</div>' +
+      (user ? '' : '<p class="hint" style="margin-top:12px">ต้องเข้าสู่ระบบก่อนเก็บโค้ด <a class="ext" href="#login">เข้าสู่ระบบ</a></p>') +
+      '<h2 style="font-size:1.3rem;margin:34px 0 12px">ช่วงดำเนินงาน</h2><div class="sect"><h2>' + ic('ticket') + 'คูปองให้เก็บเอง</h2><p style="color:var(--ink-soft)">ระหว่างที่ Loopwear ดำเนินงาน ผู้ใช้กดเก็บคูปองได้เองที่หน้านี้ ตอนนี้ยังไม่มีคูปองที่เปิดให้เก็บ</p></div></div>';
+  };
+
+  function cartCalc() {
+    var sub = 0; cart.forEach(function (c) { sub += linePrice(c); });
+    var res = { sub: sub, coupon: null, disc: 0, pts: 0, ptsVal: 0, avail: [] };
+    var cps = (user && user.coupons) || [];
+    cps.forEach(function (c) { var d = COUPONS[c.code]; if (d && d.type === 'buy' && has(c.code) && sub >= d.min) res.avail.push(c.code); });
+    var pick = cartOpt.coupon === 'auto' ? res.avail[0] : cartOpt.coupon;
+    if (pick && res.avail.indexOf(pick) >= 0) { res.coupon = pick; res.disc = r2(sub * COUPONS[pick].pct / 100); }
+    var after = r2(sub - res.disc);
+    if (cartOpt.usePts && user) { var blocks = Math.min(Math.floor(user.points / 30), Math.floor(after / 5)); res.pts = blocks * 30; res.ptsVal = blocks * 5; }
+    res.total = r2(after - res.ptsVal);
+    return res;
+  }
+  function linePrice(c) { return c.kind === 'rent' ? rentPrice(rentById(c.id), c.days) : byId(c.id).price; }
+  RENDER.cart = function () {
+    var head = '<div class="wrap page"><nav class="crumbs" aria-label="เส้นทาง"><a href="#home">หน้าแรก</a>' + CH + '<span>ตะกร้าสินค้า</span></nav><h1 class="page-title">ตะกร้าสินค้า</h1>';
+    if (lastOrder) { var o = lastOrder; lastOrder = null; return head + '<div class="success" style="margin-top:18px">' + ic('check') + '<span>สั่งซื้อสำเร็จ (ตัวอย่าง) ยอดชำระ ' + fmt(o.total) + (o.disc ? ' ใช้โค้ดลด ' + fmt(o.disc) : '') + (o.ptsVal ? ' ใช้แต้ม ' + num(o.pts) + ' แต้มลด ' + fmt(o.ptsVal) : '') + ' ต้นแบบยังไม่เชื่อมระบบชำระเงินจริง</span></div><a class="btn btn-primary" href="#shop">เลือกซื้อต่อ</a></div>'; }
+    if (!cart.length) return head + '<div class="empty" style="margin-top:18px"><h3>ตะกร้ายังว่างอยู่</h3><p>เลือกเสื้อผ้ามือสองหรือชุดเช่าที่ถูกใจ แล้วใส่ตะกร้าได้เลย</p><a class="btn btn-primary" href="#shop" style="margin-top:14px">ไปเลือกซื้อ</a></div></div>';
+    var groups = {}, order = [];
+    cart.forEach(function (c) { var k = c.kind === 'rent' ? rentById(c.id).brand : sellerOf(byId(c.id)).name; if (!groups[k]) { groups[k] = []; order.push(k); } groups[k].push(c); });
+    var rows = order.map(function (k) {
+      return '<div class="cgroup"><h3>' + ic('store') + esc(k) + ic('shield') + '</h3>' + groups[k].map(function (c) {
+        var it = c.kind === 'rent' ? rentById(c.id) : byId(c.id), isr = c.kind === 'rent';
+        return '<div class="crow">' + art(isr ? { name: it.name, img: it.img, cat: it.cat } : it, isr ? 'rentp' : 'tall') + '<div style="min-width:0"><a class="nm" href="#' + (isr ? 'rent-' : 'item-') + it.id + '">' + esc(it.name) + '</a><small>' + (isr ? 'เช่า ' + c.days + ' วัน · ไซส์ ' + esc(it.size) : 'ซื้อ · ' + it.q + ' · ' + it.d) + '</small><button class="rm" type="button" data-remove="' + c.kind + ':' + it.id + '">' + ic('trash') + 'นำออก</button></div><div class="pp">' + fmt(linePrice(c)) + '</div></div>';
+      }).join('') + '</div>';
+    }).join('');
+    var s = cartCalc();
+    var cbox = '<div class="cbox"><h4>โค้ดส่วนลด</h4>' + (s.avail.length ? '<div class="opts"><label class="opt"><input type="radio" name="cpick" value="none"' + (!s.coupon ? ' checked' : '') + '><span>ไม่ใช้โค้ด</span></label>' + s.avail.map(function (code) { return '<label class="opt"><input type="radio" name="cpick" value="' + code + '"' + (s.coupon === code ? ' checked' : '') + '><span><b style="font-family:var(--font-display);font-weight:500">' + COUPONS[code].title + '</b><small>' + code + '</small></span></label>'; }).join('') + '</div>' : '<p class="hint">' + (user ? 'ยังไม่มีโค้ดที่ใช้ได้กับยอดนี้ <a class="ext" href="#promo">ไปเก็บโค้ด</a>' : 'เข้าสู่ระบบเพื่อใช้โค้ดและแต้ม') + '</p>') + '</div>';
+    var pbox = user ? '<label class="chk"><input type="checkbox" id="usepts"' + (cartOpt.usePts ? ' checked' : '') + (user.points < 30 ? ' disabled' : '') + '><span>ใช้แต้มเป็นส่วนลด (มี ' + num(user.points) + ' แต้ม ทุก 30 แต้ม = ฿5)</span></label>' : '';
+    return head + '<div class="cart-grid"><div>' + rows + '</div><aside class="summary"><h3 style="margin-bottom:8px">สรุปคำสั่งซื้อ</h3>' + cbox + pbox +
+      '<div class="line-r"><span>สินค้า ' + cart.length + ' รายการ</span><span>' + fmt(s.sub) + '</span></div>' + (s.disc ? '<div class="line-r disc"><span>โค้ด ' + s.coupon + '</span><span>-' + fmt(s.disc) + '</span></div>' : '') + (s.ptsVal ? '<div class="line-r disc"><span>ใช้ ' + num(s.pts) + ' แต้ม</span><span>-' + fmt(s.ptsVal) + '</span></div>' : '') +
+      '<div class="row total"><span>รวมทั้งหมด</span><b>' + fmt(s.total) + '</b></div><button class="btn btn-primary btn-block" type="button" data-checkout style="margin-top:12px">ชำระเงิน</button><p class="note">ขั้นตอนชำระเงินยังเป็นตัวอย่าง ยังไม่เชื่อมระบบจริง</p></aside></div></div>';
+  };
+
+  /* sell */
   function draftItem() {
-    return { id: 0, preview: true, name: draft.name || 'ชื่อสินค้าของคุณ', cat: draft.cat, q: draft.q, d: draft.d, price: draft.price || 0, size: draft.size, seller: 0, bg: '#E6EFF9', fill: '#8FB0DA', rent: null, ai: 1, note: '', photo: draft.photo };
+    return { id: 0, preview: true, mine: true, name: draft.name || 'ชื่อสินค้าของคุณ', cat: draft.cat, q: draft.q, d: draft.d, price: Number(draft.price) || 0, size: draft.size, seller: 'me', img: draft.img, photo: draft.photo };
   }
   function opts(list, cur) { return list.map(function (v) { return '<option' + (v === cur ? ' selected' : '') + '>' + v + '</option>'; }).join(''); }
-  function feeOf(p) { var f = Math.round(p * 7) / 100; return { f: f, n: Math.round((p - f) * 100) / 100 }; }
+  function aiBox() {
+    if (!draft.analyzed || !draft.ai) return '<p class="hint">เลือกรูปแล้วกด "ให้ AI ประเมิน" เพื่อให้ช่วยกรอกประเภท คุณภาพ ตำหนิ และช่วงราคา</p>';
+    var a = draft.ai;
+    return '<div class="aiout"><b style="font-family:var(--font-display);font-weight:500">' + ic('spark') + ' ผลประเมินตัวอย่าง</b><dl class="kv"><div><dt>ประเภทสินค้า</dt><dd>' + a.cat + '</dd></div><div><dt>คุณภาพสินค้า</dt><dd>' + a.q + '</dd></div><div><dt>ตำหนิ</dt><dd>' + a.d + '</dd></div><div><dt>ช่วงราคามือสอง</dt><dd>' + fmt(a.lo) + ' - ' + fmt(a.hi) + '</dd></div><div><dt>ตรวจรูปภาพ</dt><dd>ไม่พบความผิดปกติ</dd></div></dl><span class="hint">' + (a.mock ? 'ต้นแบบยังไม่ได้เชื่อมโมเดล AI จริง ค่านี้เป็นค่าตัวอย่าง กรุณาตรวจและแก้ไขก่อนลงขาย' : 'ผลประเมินจากรูปตัวอย่างในต้นแบบ แก้ไขได้ในขั้นตอนถัดไป') + '</span></div>';
+  }
+  function feeBox() {
+    var p = Number(draft.price) || 0, f = sellFee(p, draft.usePts), pr = (user && user.sellerPromo) || { count: 0, value: 0 }, lf = COUPONS.LOOPFIRST;
+    var promoLine = has('LOOPFIRST') ? '<p class="hint">โค้ดขายครั้งแรก: ใช้ไป ' + pr.count + '/' + lf.maxItems + ' ชิ้น มูลค่า ' + fmt(pr.value) + '/' + fmt(lf.maxValue) + '</p>' : '<p class="hint">ยังไม่ได้เก็บโค้ดขายครั้งแรก <a class="ext" href="#promo">ไปเก็บโค้ด</a></p>';
+    var ptsLine = user ? '<label class="chk"><input type="checkbox" id="s-pts"' + (draft.usePts ? ' checked' : '') + (user.points < 30 ? ' disabled' : '') + '><span>ใช้แต้มลดค่าคอม (มี ' + num(user.points) + ' แต้ม ทุก 30 แต้ม = ฿5)</span></label>' : '';
+    return '<dl class="out" aria-live="polite" style="margin-top:0"><div><dt>ค่าคอมมิชชัน 7%</dt><dd>' + fmt(f.base) + '</dd></div>' + (f.promo ? '<div><dt>โค้ดขายครั้งแรก</dt><dd>-' + fmt(f.base) + '</dd></div>' : '') + (f.ptsVal ? '<div><dt>ใช้ ' + num(f.pts) + ' แต้ม</dt><dd>-' + fmt(f.ptsVal) + '</dd></div>' : '') + '<div><dt>ค่าคอมที่ชำระ</dt><dd>' + fmt(f.fee) + '</dd></div><div class="total"><dt>ผู้ขายได้รับ</dt><dd>' + fmt(f.net) + '</dd></div></dl>' + promoLine + ptsLine;
+  }
   RENDER.sell = function () {
-    var fx = feeOf(draft.price || 0);
-    return '<div class="wrap page"><nav class="crumbs" aria-label="เส้นทาง"><a href="#home">หน้าแรก</a>' + icon('chev', 'width:.9em;height:.9em') + '<span>ขายเสื้อผ้า</span></nav><h1 class="page-title">ขายเสื้อผ้าที่ไม่ได้ใช้แล้ว</h1><p class="page-sub">ลงขายกับ Loopwear ค่าธรรมเนียม 7% ต่อสินค้า เก็บจากผู้ขาย</p>' +
-      '<div class="sell-grid"><form class="form" id="sellform" onsubmit="return false">' +
-        '<label class="drop"><input type="file" id="photo" accept="image/*">' + icon('camera') + '<span id="photolabel">เพิ่มรูปสินค้า (ตัวอย่างการลงขาย)</span></label>' +
-        '<div class="f"><label for="s-name">ชื่อสินค้า</label><input id="s-name" data-sell="name" type="text" placeholder="เช่น เดรสลายดอกสีฟ้า" value="' + esc(draft.name) + '"></div>' +
-        '<div class="frow"><div class="f"><label for="s-cat">ประเภทสินค้า</label><select id="s-cat" data-sell="cat">' + opts(CATS, draft.cat) + '</select></div><div class="f"><label for="s-size">ขนาด</label><input id="s-size" data-sell="size" type="text" value="' + esc(draft.size) + '"></div></div>' +
-        '<div class="frow"><div class="f"><label for="s-q">คุณภาพสินค้า</label><select id="s-q" data-sell="q">' + opts(QS, draft.q) + '</select></div><div class="f"><label for="s-d">ตำหนิ</label><select id="s-d" data-sell="d">' + opts(DS, draft.d) + '</select></div></div>' +
-        '<div class="f" data-calcroot><label for="s-price">ราคาที่ตั้งขาย (บาท)</label><input id="s-price" data-sell="price" data-calcin type="number" min="0" step="any" inputmode="decimal" value="' + draft.price + '"></div>' +
-        '<div class="perks"><div class="okline">' + icon('spark') + '<span>AI ช่วยคัดแยกประเภท ประเมินราคามือสอง และคุณภาพสินค้า</span></div><div class="okline">' + icon('idcard') + '<span>ผู้ขายยืนยันตัวตนก่อนลงขาย</span></div><div class="okline">' + icon('live') + '<span>ไลฟ์สดโชว์สินค้าจริงให้ผู้ซื้อเห็น</span></div></div>' +
-        '<button class="btn btn-primary" type="button" data-sellsubmit>ลงขาย</button></form>' +
-      '<div class="previewcol"><div><p class="label" style="margin-bottom:8px">ตัวอย่างหน้าตาสินค้าของคุณ</p><div id="preview">' + card(draftItem()) + '</div></div>' +
-        '<div class="calc" data-calcroot><dl class="out" style="margin-top:0" aria-live="polite"><div><dt>ค่าธรรมเนียม Loopwear (7%)</dt><dd data-fee>' + fmt(fx.f) + '</dd></div><div class="total"><dt>ผู้ขายได้รับ</dt><dd data-net>' + fmt(fx.n) + '</dd></div></dl><div class="split" aria-hidden="true"><span class="seller"></span><span class="loop"></span></div><div class="legend" aria-hidden="true"><span>ผู้ขายได้รับ 93%</span><span>ค่าธรรมเนียม 7%</span></div><p class="note">ยังไม่รวมการใช้แต้มจากแคมเปญบริจาค</p></div></div></div></div>';
+    var chips = draft.analyzed && draft.ai ? '<div class="chiprow">' + [draft.ai.lo, Math.round((draft.ai.lo + draft.ai.hi) / 2), draft.ai.hi].map(function (v) { return '<button type="button" data-setprice="' + v + '">ตั้งราคา ' + fmt(v) + '</button>'; }).join('') + '</div>' : '';
+    return '<div class="wrap page"><nav class="crumbs" aria-label="เส้นทาง"><a href="#home">หน้าแรก</a>' + CH + '<span>ขายเสื้อผ้า</span></nav><h1 class="page-title">ขายเสื้อผ้าที่ไม่ได้ใช้แล้ว</h1><p class="page-sub">ลงขายปกติ ค่าคอมมิชชัน 7% ต่อชิ้น เก็บจากผู้ขาย</p>' +
+      (user && !user.verified ? '<div class="notice" style="margin-top:14px">ผู้ขายต้องยืนยันตัวตนก่อนลงขายจริง <a href="#account">ไปยืนยันตัวตนที่บัญชีของฉัน</a></div>' : '') +
+      '<div class="sell-grid2"><div><form id="sellform" onsubmit="return false" novalidate>' +
+      '<section class="step"><h2><span class="sn">1</span>รูปสินค้า และให้ AI ประเมิน</h2><div class="samples" role="group" aria-label="เลือกรูปตัวอย่าง">' + [1, 2, 3, 4, 5, 6].map(function (n) { return '<button type="button" data-pick="' + n + '" aria-pressed="' + (draft.src === String(n)) + '" aria-label="รูปตัวอย่าง ' + n + '"><img src="assets/img/sale-' + n + '.jpg" alt=""></button>'; }).join('') + '</div>' +
+      '<label class="drop">' + ic('camera') + '<span id="photolabel">' + (draft.src === 'upload' ? 'เปลี่ยนรูปที่อัปโหลด' : 'หรืออัปโหลดรูปสินค้าของคุณ') + '</span><input type="file" id="photo" accept="image/*"></label>' +
+      '<button class="btn btn-primary" type="button" data-analyze' + (draft.src ? '' : ' disabled') + '>' + ic('spark') + 'ให้ AI ประเมิน</button><div id="aibox">' + aiBox() + '</div></section>' +
+      '<section class="step"><h2><span class="sn">2</span>รายละเอียดสินค้า</h2><div class="fld"><label for="s-name">ชื่อสินค้า</label><input id="s-name" type="text" placeholder="เช่น เดรสลายดอกสีฟ้า" value="' + esc(draft.name) + '"></div>' +
+      '<div class="frow2"><div class="fld"><label for="s-cat">ประเภทสินค้า</label><select id="s-cat">' + opts(CATS, draft.cat) + '</select></div><div class="fld"><label for="s-size">ไซส์</label><input id="s-size" type="text" value="' + esc(draft.size) + '"></div></div>' +
+      '<div class="frow2"><div class="fld"><label for="s-q">คุณภาพสินค้า</label><select id="s-q">' + opts(QS, draft.q) + '</select></div><div class="fld"><label for="s-d">ตำหนิ</label><select id="s-d">' + opts(DS, draft.d) + '</select></div></div></section>' +
+      '<section class="step"><h2><span class="sn">3</span>ราคา และค่าคอมมิชชัน</h2><div class="fld"><label for="s-price">ราคาที่ตั้งขาย (บาท)</label><input id="s-price" type="number" min="0" step="any" inputmode="decimal" value="' + esc(draft.price) + '"></div><div id="chips">' + chips + '</div><div id="feebox">' + feeBox() + '</div><p class="err" id="s-err" role="alert"></p><button class="btn btn-primary" type="button" data-sellsubmit>ลงขาย</button></section></form></div>' +
+      '<div class="previewcol2"><div><span class="label" style="margin-bottom:8px">ตัวอย่างหน้าตาสินค้าของคุณ</span><div id="preview">' + card(draftItem()) + '</div></div><div class="notice">ราคา คุณภาพ และตำหนิที่ AI แนะนำเป็นเพียงข้อมูลตัวอย่าง ผู้ขายแก้ไขได้ก่อนลงขาย</div></div></div></div>';
+  };
+  function updateSell() {
+    var p = $('#preview'); if (p) p.innerHTML = card(draftItem());
+    var f = $('#feebox'); if (f) f.innerHTML = feeBox();
+  }
+  function analyze() {
+    var btn = $('[data-analyze]'); if (!btn || !draft.src) return;
+    btn.disabled = true; btn.textContent = 'AI กำลังประเมิน...';
+    setTimeout(function () {
+      var n = parseInt(draft.src, 10), it = n ? ITEMS[n - 1] : null;
+      draft.ai = it ? { cat: it.cat, q: it.q, d: it.d, lo: it.ai.lo, hi: it.ai.hi } : { cat: draft.cat, q: 'ดี', d: 'ตำหนิเล็กน้อย', lo: 100, hi: 200, mock: true };
+      draft.analyzed = true; draft.cat = draft.ai.cat; draft.q = draft.ai.q; draft.d = draft.ai.d;
+      if (it) { draft.name = draft.name || it.name; draft.size = draft.size || it.size; }
+      route(true);
+    }, 900);
+  }
+
+  /* account */
+  RENDER.account = function () {
+    var u = user, cs = u.coupons || [], ls = u.listings || [];
+    var cl = cs.length ? cs.map(function (c) { return ticket(c.code); }).join('') : '<p class="hint">ยังไม่มีโค้ด <a class="ext" href="#promo">ไปศูนย์โค้ดส่วนลด</a></p>';
+    return '<div class="wrap page"><nav class="crumbs" aria-label="เส้นทาง"><a href="#home">หน้าแรก</a>' + CH + '<span>บัญชีของฉัน</span></nav><h1 class="page-title">บัญชีของฉัน</h1>' +
+      '<div class="acc-grid"><section class="sect"><div class="who"><span class="avatar" aria-hidden="true">' + esc(u.name.charAt(0).toUpperCase()) + '</span><div><b>' + esc(u.name) + '</b><span>' + esc(u.email) + '</span></div></div>' +
+      '<div class="okline" style="margin-top:12px">' + ic(u.verified ? 'check' : 'idcard') + '<span>' + (u.verified ? 'ยืนยันตัวตนแล้ว (ตัวอย่าง)' : 'ยังไม่ได้ยืนยันตัวตน') + '</span></div>' + (u.verified ? '' : '<button class="btn btn-ghost btn-sm" type="button" data-verify>ยืนยันตัวตน (ตัวอย่าง)</button><p class="hint" style="margin-top:8px">ต้นแบบไม่เก็บข้อมูลบัตรประชาชน ในระบบจริงจะขอความยินยอมแยกก่อนเก็บข้อมูลยืนยันตัวตน</p>') + '<div style="margin-top:14px"><button class="btn btn-ghost btn-sm" type="button" data-logout>ออกจากระบบ</button></div></section>' +
+      '<section class="sect"><h2>' + ic('coin') + 'แต้มสะสม</h2><div class="stats"><div class="stat"><b>' + num(u.points) + '</b><span>แต้ม</span></div><div class="stat"><b>' + fmt(Math.floor(u.points / 30) * 5) + '</b><span>มูลค่าส่วนลด</span></div><div class="stat"><b>' + (30 - (u.points % 30 || 30)) + '</b><span>แต้มถึงรอบถัดไป</span></div></div><p class="hint" style="margin-top:10px">1 ตัว = 1 แต้ม ทุก 30 แต้ม = ฿5 <a class="ext" href="#donate">บริจาคเพิ่ม</a></p></section>' +
+      '<section class="sect full"><h2>' + ic('ticket') + 'โค้ดและคูปองของฉัน</h2><div class="acc-grid" style="margin-top:0">' + cl + '</div></section>' +
+      '<section class="sect"><h2>' + ic('tag') + 'ประกาศขายของฉัน</h2>' + (ls.length ? ls.map(function (it) { return '<div class="listrow">' + art(it, 'tall') + '<div style="min-width:0"><a href="#item-' + it.id + '">' + esc(it.name) + '</a><small>' + fmt(it.price) + ' · ค่าคอม ' + (it.promo ? 'ฟรี (โค้ดขายครั้งแรก)' : fmt(it.fee)) + '</small></div></div>'; }).join('') : '<p class="hint">ยังไม่มีประกาศขาย <a class="ext" href="#sell">ลงขายชิ้นแรก</a></p>') + '</section>' +
+      '<section class="sect"><h2>' + ic('heart') + 'ประวัติการบริจาค</h2>' + ((u.donations || []).length ? u.donations.slice().reverse().map(function (d) { return '<div class="line-r"><span>' + fdate(d.ts) + ' · ' + d.items + ' ชิ้น</span><b style="color:var(--blue-strong)">+' + num(d.pts) + ' แต้ม</b></div>'; }).join('') : '<p class="hint">ยังไม่มีประวัติ <a class="ext" href="#donate">เริ่มบริจาค</a></p>') + '</section>' +
+      '<section class="sect full"><h2>' + ic('lock') + 'ความเป็นส่วนตัว (PDPA)</h2><div class="fgrid"><label class="chk"><input type="checkbox" checked disabled><span>ยินยอมให้เก็บ ใช้ และเปิดเผยข้อมูลเพื่อให้บริการ (จำเป็น) ยินยอมเมื่อ ' + fdate(u.consent.ts) + '</span></label><label class="chk"><input type="checkbox" id="c-mkt2"' + (u.consent.marketing ? ' checked' : '') + '><span>รับข่าวสารโปรโมชันและคูปอง (ไม่บังคับ เปลี่ยนได้ทุกเมื่อ)</span></label>' +
+      '<div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn btn-ghost btn-sm" type="button" data-policy>อ่านนโยบายความเป็นส่วนตัว</button>' + (delAsk ? '' : '<button class="btn btn-danger btn-sm" type="button" data-delask>ขอลบบัญชีและข้อมูล</button>') + '</div>' +
+      (delAsk ? '<div class="confirmbox"><span>ยืนยันลบบัญชีและข้อมูลทั้งหมดในเบราว์เซอร์นี้ ย้อนกลับไม่ได้</span><span style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn btn-dangerfill btn-sm" type="button" data-delyes>ลบบัญชี</button><button class="btn btn-ghost btn-sm" type="button" data-delno>ยกเลิก</button></span></div>' : '') + '</div></section></div></div>';
   };
 
-  /* ---------- behaviours ---------- */
-  var AFTER = {
-    home: startCarousel,
-    shop: afterShop
-  };
-  function startCarousel() {
+  /* ---------- auth actions ---------- */
+  function renderHeaderAuth() {
+    var h = $('#hauth');
+    h.innerHTML = user ? '<a class="avatar-btn" href="#account" aria-label="บัญชีของฉัน">' + esc(user.name.charAt(0).toUpperCase()) + '</a>' : '<a class="btn btn-primary btn-sm" href="#login">เข้าสู่ระบบ</a>';
+  }
+  function loginAs(u) {
+    user = u; guest = false; save(); renderHeaderAuth(); updateBadge();
+    go('home'); setTimeout(promoPopup, 200);
+  }
+  function newUser(name, email, marketing) {
+    var u = { name: name, email: email, isNew: true, createdAt: Date.now(), points: 0, coupons: [], listings: [], nextId: 1, sellerPromo: { count: 0, value: 0 }, donations: [], verified: false, consent: { terms: true, marketing: !!marketing, ts: Date.now() } };
+    user = u; addCoupon('WELCOME10'); return u;
+  }
+  function setErr(id, msg, field) { var e = $(id); if (e) e.textContent = msg; if (field) { var f = $(field); if (f) { f.setAttribute('aria-invalid', 'true'); f.focus(); } } }
+  function clearInvalid(form) { $$('[aria-invalid]', form).forEach(function (f) { f.removeAttribute('aria-invalid'); }); }
+  var EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  document.addEventListener('submit', function (e) {
+    var f = e.target;
+    if (f.id === 'loginform') {
+      e.preventDefault(); clearInvalid(f);
+      var em = $('#l-email').value.trim().toLowerCase(), pw = $('#l-pw').value;
+      if (!EMAIL.test(em)) return setErr('#l-err', 'กรุณากรอกอีเมลให้ถูกต้อง', '#l-email');
+      if (!pw) return setErr('#l-err', 'กรุณากรอกรหัสผ่าน', '#l-pw');
+      if (!USERS[em]) return setErr('#l-err', 'ไม่พบบัญชีนี้ในเบราว์เซอร์นี้ กรุณาสมัครสมาชิกก่อน หรือลองใช้บัญชีตัวอย่าง', '#l-email');
+      loginAs(USERS[em]);
+    } else if (f.id === 'regform') {
+      e.preventDefault(); clearInvalid(f);
+      var nm = $('#r-name').value.trim(), em2 = $('#r-email').value.trim().toLowerCase(), p1 = $('#r-pw').value, p2 = $('#r-pw2').value;
+      if (!nm) return setErr('#r-err', 'กรุณากรอกชื่อที่แสดง', '#r-name');
+      if (!EMAIL.test(em2)) return setErr('#r-err', 'กรุณากรอกอีเมลให้ถูกต้อง', '#r-email');
+      if (USERS[em2]) return setErr('#r-err', 'อีเมลนี้สมัครไว้แล้ว กรุณาเข้าสู่ระบบ', '#r-email');
+      if (p1.length < 8) return setErr('#r-err', 'รหัสผ่านต้องมีอย่างน้อย 8 ตัวอักษร', '#r-pw');
+      if (p1 !== p2) return setErr('#r-err', 'รหัสผ่านทั้งสองช่องไม่ตรงกัน', '#r-pw2');
+      if (!$('#c-terms').checked) return setErr('#r-err', 'กรุณาให้ความยินยอมตามนโยบายความเป็นส่วนตัวเพื่อสมัครสมาชิก', '#c-terms');
+      loginAs(newUser(nm, em2, $('#c-mkt').checked));
+    } else if (f.id === 'searchform') {
+      e.preventDefault();
+      state.q = $('#q').value; state.cats = []; state.quals = []; state.defs = []; state.min = ''; state.max = '';
+      go('shop');
+    }
+  });
+
+  /* ---------- routing ---------- */
+  var VIEWS = ['home', 'shop', 'item', 'rent', 'rentitem', 'live', 'donate', 'collab', 'promo', 'sell', 'cart', 'account', 'login', 'register', 'about'];
+  function parseHash() {
+    var h = location.hash.replace(/^#/, ''), m;
+    if ((m = /^item-(\d+)$/.exec(h))) return { name: 'item', id: +m[1] };
+    if ((m = /^rent-(\d+)$/.exec(h))) return { name: 'rentitem', id: +m[1] };
+    return { name: h };
+  }
+  function setHash(h) { try { history.replaceState(null, '', '#' + h); } catch (e) { location.hash = h; } }
+  function go(name) { if (location.hash === '#' + name) route(); else location.hash = name; }
+  var carTimer = null;
+  function route(keep) {
+    if (carTimer) { clearInterval(carTimer); carTimer = null; }
+    var r = parseHash(), name = r.name || (user ? 'home' : 'login');
+    if (VIEWS.indexOf(name) < 0) name = 'home';
+    if (!user && !guest && name !== 'login' && name !== 'register') { name = 'login'; setHash('login'); }
+    else if (!user && (name === 'sell' || name === 'account')) { toast('กรุณาเข้าสู่ระบบก่อน'); name = 'login'; setHash('login'); }
+    else if (user && (name === 'login' || name === 'register')) { name = 'home'; setHash('home'); }
+    var dyn = $('#view-dyn'), about = $('#view-about');
+    if (name === 'about') { dyn.hidden = true; dyn.innerHTML = ''; about.hidden = false; }
+    else { about.hidden = true; dyn.hidden = false; dyn.innerHTML = RENDER[name](r.id); if (AFTER[name]) AFTER[name](); }
+    var navName = name === 'item' ? 'shop' : name === 'rentitem' ? 'rent' : name;
+    $$('[data-nav]').forEach(function (a) { if (a.getAttribute('data-nav') === navName) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); });
+    document.body.classList.toggle('on-item', name === 'item' || name === 'rentitem');
+    document.body.classList.toggle('on-auth', name === 'login' || name === 'register');
+    var q = $('#q'); if (q && name === 'shop') q.value = state.q;
+    if (!keep) window.scrollTo({ top: 0, behavior: 'instant' });
+  }
+  AFTER.home = function () {
     var tr = $('#track'); if (!tr) return;
     var dots = $$('#dots button'), n = dots.length, idx = 0;
-    function go(k) { idx = (k + n) % n; tr.scrollTo({ left: tr.clientWidth * idx, behavior: 'smooth' }); }
-    function mark() { idx = Math.round(tr.scrollLeft / Math.max(1, tr.clientWidth)); dots.forEach(function (d, i) { d.setAttribute('aria-current', String(i === idx)); }); }
-    tr.addEventListener('scroll', mark, { passive: true });
-    dots.forEach(function (d, i) { d.addEventListener('click', function () { go(i); }); });
+    function goTo(k) { idx = (k + n) % n; tr.scrollTo({ left: tr.clientWidth * idx, behavior: 'smooth' }); }
+    tr.addEventListener('scroll', function () { idx = Math.round(tr.scrollLeft / Math.max(1, tr.clientWidth)); dots.forEach(function (d, i) { d.setAttribute('aria-current', String(i === idx)); }); }, { passive: true });
+    dots.forEach(function (d, i) { d.addEventListener('click', function () { goTo(i); }); });
     if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      carTimer = setInterval(function () { go(idx + 1); }, 5500);
+      carTimer = setInterval(function () { goTo(idx + 1); }, 5500);
       var box = tr.parentNode;
       box.addEventListener('pointerenter', function () { clearInterval(carTimer); carTimer = null; });
       box.addEventListener('focusin', function () { clearInterval(carTimer); carTimer = null; });
     }
+  };
+
+  /* ---------- cart actions ---------- */
+  function updateBadge() { $$('[data-cartcount]').forEach(function (b) { b.textContent = cart.length; b.hidden = cart.length === 0; }); }
+  function addCart(kind, id) {
+    for (var i = 0; i < cart.length; i++) if (cart[i].kind === kind && cart[i].id === id) { toast('สินค้าชิ้นนี้อยู่ในตะกร้าแล้ว'); return false; }
+    cart.push(kind === 'rent' ? { kind: kind, id: id, days: rentSel[id] || 1 } : { kind: kind, id: id });
+    updateBadge(); toast('เพิ่มลงตะกร้าแล้ว'); return true;
   }
 
-  function toast(msg) {
-    var t = $('#toast'); t.textContent = msg; t.hidden = false;
-    clearTimeout(toastTimer); toastTimer = setTimeout(function () { t.hidden = true; }, 2200);
-  }
-  function updateBadge() {
-    $$('[data-cartcount]').forEach(function (b) { b.textContent = cart.length; b.hidden = cart.length === 0; });
-  }
-  function addToCart(id, mode, days) {
-    for (var i = 0; i < cart.length; i++) if (cart[i].id === id) { toast('สินค้าชิ้นนี้อยู่ในตะกร้าแล้ว'); return false; }
-    cart.push({ id: id, mode: mode, days: days }); updateBadge(); toast('เพิ่มลงตะกร้าแล้ว'); return true;
-  }
-  function go(name) { if (location.hash === '#' + name) route(); else location.hash = name; }
-
-  var VIEWS = ['home', 'shop', 'item', 'cart', 'rent', 'live', 'donate', 'sell', 'about'];
-  function route(keep) {
-    if (carTimer) { clearInterval(carTimer); carTimer = null; }
-    var h = location.hash.replace(/^#/, '') || 'home';
-    var m = /^item-(\d+)$/.exec(h);
-    var name = m ? 'item' : h;
-    if (VIEWS.indexOf(name) < 0) name = 'home';
-    var dyn = $('#view-dyn'), about = $('#view-about');
-    if (name === 'about') { dyn.hidden = true; dyn.innerHTML = ''; about.hidden = false; }
-    else { about.hidden = true; dyn.hidden = false; dyn.innerHTML = RENDER[name](m ? parseInt(m[1], 10) : null); if (AFTER[name]) AFTER[name](); }
-    $$('[data-nav]').forEach(function (a) { if (a.getAttribute('data-nav') === name) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); });
-    document.body.classList.toggle('on-item', name === 'item');
-    var q = $('#q'); if (q && name === 'shop') q.value = state.q;
-    if (!keep) window.scrollTo({ top: 0, behavior: 'instant' });
-  }
-
-  function calcUpdate(input) {
-    var root = input.closest('[data-calcroot]');
-    var scope = root && root.querySelector('[data-fee]') ? root : (root && root.parentNode.querySelector('.calc[data-calcroot]')) || root;
-    var v = parseFloat(input.value); if (!isFinite(v) || v < 0) v = 0;
-    var x = feeOf(v);
-    var f = $('[data-fee]', scope), n = $('[data-net]', scope);
-    if (f) f.textContent = fmt(x.f); if (n) n.textContent = fmt(x.n);
-  }
-  function refreshPreview() {
-    var p = $('#preview'); if (p) p.innerHTML = card(draftItem());
-    var pr = $('#s-price'); if (pr) { var scope = $('.previewcol .calc'); var x = feeOf(draft.price || 0); $('[data-fee]', scope).textContent = fmt(x.f); $('[data-net]', scope).textContent = fmt(x.n); }
-  }
-
+  /* ---------- events ---------- */
   document.addEventListener('click', function (e) {
-    var t = e.target.closest('[data-add],[data-buy],[data-cat],[data-live],[data-scroll],[data-remove],[data-mode],[data-toggle-filters],[data-reset],[data-pr],[data-checkout],[data-sellsubmit],[data-seller]');
-    if (!t) return;
-    if (t.hasAttribute('data-add')) { var id = +t.getAttribute('data-add'); var it = byId(id); var onItem = $('.item-grid') && itemFor === id; addToCart(id, onItem ? itemMode : 'buy', itemDays); return; }
-    if (t.hasAttribute('data-buy')) { var bid = +t.getAttribute('data-buy'); var found = cart.some(function (c) { return c.id === bid; }); if (!found) addToCart(bid, itemMode, itemDays); go('cart'); return; }
+    var t = e.target.closest('[data-add],[data-addrent],[data-buy],[data-buyrent],[data-cat],[data-room],[data-scroll],[data-remove],[data-toggle-filters],[data-reset],[data-pr],[data-checkout],[data-collect],[data-policy],[data-closemodal],[data-demo],[data-guest],[data-logout],[data-tier],[data-gal],[data-pick],[data-analyze],[data-sellsubmit],[data-setprice],[data-step],[data-donsubmit],[data-verify],[data-delask],[data-delyes],[data-delno]');
+    if (!t) { if (e.target.id === 'mroot') closeModal(); return; }
+    var v;
+    if (t.hasAttribute('data-closemodal')) { closeModal(); return; }
+    if (t.hasAttribute('data-policy')) { e.preventDefault(); openPolicy(); return; }
+    if (t.hasAttribute('data-collect')) { collect(t.getAttribute('data-collect')); return; }
+    if (t.hasAttribute('data-demo')) {
+      var em = 'demo@loopwear.example';
+      if (!USERS[em]) { var d = newUser('ผู้ใช้ตัวอย่าง', em, false); d.isNew = false; d.coupons = []; USERS[em] = d; }
+      loginAs(USERS[em]); return;
+    }
+    if (t.hasAttribute('data-guest')) { guest = true; go('home'); return; }
+    if (t.hasAttribute('data-logout')) { user = null; guest = false; save(); renderHeaderAuth(); toast('ออกจากระบบแล้ว'); go('login'); return; }
+    if (t.hasAttribute('data-add')) { addCart('buy', +t.getAttribute('data-add')); return; }
+    if (t.hasAttribute('data-addrent')) { addCart('rent', +t.getAttribute('data-addrent')); return; }
+    if (t.hasAttribute('data-buy')) { v = +t.getAttribute('data-buy'); addCart('buy', v); go('cart'); return; }
+    if (t.hasAttribute('data-buyrent')) { v = +t.getAttribute('data-buyrent'); addCart('rent', v); go('cart'); return; }
     if (t.hasAttribute('data-cat')) { e.preventDefault(); state.cats = [t.getAttribute('data-cat')]; state.q = ''; go('shop'); return; }
-    if (t.hasAttribute('data-seller')) { e.preventDefault(); state.q = t.getAttribute('data-seller'); state.cats = []; go('shop'); return; }
-    if (t.hasAttribute('data-live')) { state.liveSeller = +t.getAttribute('data-live'); if (location.hash === '#live') { e.preventDefault(); route(); } return; }
+    if (t.hasAttribute('data-room')) { roomSel = +t.getAttribute('data-room'); if (parseHash().name === 'live') { e.preventDefault(); route(true); } return; }
     if (t.hasAttribute('data-scroll')) { var el = document.getElementById(t.getAttribute('data-scroll')); if (el) el.scrollIntoView({ behavior: 'smooth' }); return; }
-    if (t.hasAttribute('data-remove')) { var rid = +t.getAttribute('data-remove'); cart = cart.filter(function (c) { return c.id !== rid; }); updateBadge(); route(true); return; }
-    if (t.hasAttribute('data-mode')) { itemMode = t.getAttribute('data-mode'); route(true); return; }
+    if (t.hasAttribute('data-remove')) { v = t.getAttribute('data-remove').split(':'); cart = cart.filter(function (c) { return !(c.kind === v[0] && c.id === +v[1]); }); updateBadge(); route(true); return; }
     if (t.hasAttribute('data-toggle-filters')) { $('#filters').classList.toggle('open'); return; }
-    if (t.hasAttribute('data-reset')) { state.cats = []; state.quals = []; state.defs = []; state.min = ''; state.max = ''; state.rentOnly = false; state.q = ''; var qq = $('#q'); if (qq) qq.value = ''; route(); return; }
-    if (t.hasAttribute('data-pr')) { var p = PRESETS[+t.getAttribute('data-pr')]; var same = state.min === p[1] && state.max === p[2]; state.min = same ? '' : p[1]; state.max = same ? '' : p[2]; $('#pmin').value = state.min; $('#pmax').value = state.max; updateResults(); return; }
-    if (t.hasAttribute('data-checkout')) { toast('ตัวอย่างเท่านั้น ยังไม่ได้เชื่อมระบบชำระเงิน'); return; }
-    if (t.hasAttribute('data-sellsubmit')) { toast('ตัวอย่างเท่านั้น ยังไม่ได้ลงขายจริง'); return; }
+    if (t.hasAttribute('data-reset')) { state.cats = []; state.quals = []; state.defs = []; state.min = ''; state.max = ''; state.q = ''; var qq = $('#q'); if (qq) qq.value = ''; route(true); return; }
+    if (t.hasAttribute('data-pr')) { var p = PRESETS[+t.getAttribute('data-pr')], same = state.min === p[1] && state.max === p[2]; state.min = same ? '' : p[1]; state.max = same ? '' : p[2]; $('#pmin').value = state.min; $('#pmax').value = state.max; updateResults(); return; }
+    if (t.hasAttribute('data-tier')) { v = t.getAttribute('data-tier').split(':'); rentSel[+v[0]] = +v[1]; route(true); return; }
+    if (t.hasAttribute('data-gal')) { v = t.getAttribute('data-gal').split(':'); gal[+v[0]] = +v[1]; route(true); return; }
+    if (t.hasAttribute('data-checkout')) {
+      if (!user) { toast('กรุณาเข้าสู่ระบบก่อนชำระเงิน'); go('login'); return; }
+      var s = cartCalc();
+      if (s.coupon) { var cc = has(s.coupon); if (cc) cc.used = true; }
+      if (s.pts) user.points -= s.pts;
+      lastOrder = { total: s.total, disc: s.disc, pts: s.pts, ptsVal: s.ptsVal };
+      cart = []; cartOpt = { coupon: 'auto', usePts: false }; save(); updateBadge(); route(true); return;
+    }
+    if (t.hasAttribute('data-pick')) { draft.src = t.getAttribute('data-pick'); draft.img = 'assets/img/sale-' + draft.src + '.jpg'; draft.photo = ''; draft.analyzed = false; draft.ai = null; route(true); return; }
+    if (t.hasAttribute('data-analyze')) { analyze(); return; }
+    if (t.hasAttribute('data-setprice')) { draft.price = t.getAttribute('data-setprice'); var pi = $('#s-price'); if (pi) pi.value = draft.price; updateSell(); return; }
+    if (t.hasAttribute('data-sellsubmit')) {
+      var price = Number(draft.price);
+      if (!draft.src) return setErr('#s-err', 'กรุณาเลือกหรืออัปโหลดรูปสินค้า');
+      if (!draft.name.trim()) return setErr('#s-err', 'กรุณากรอกชื่อสินค้า', '#s-name');
+      if (!(price > 0)) return setErr('#s-err', 'กรุณากรอกราคาที่ตั้งขาย', '#s-price');
+      var f = sellFee(price, draft.usePts), id = 1000 + user.nextId++;
+      if (f.promo) { user.sellerPromo.count++; user.sellerPromo.value += price; }
+      if (f.pts) user.points -= f.pts;
+      user.listings.push({ id: id, mine: true, name: draft.name.trim(), cat: draft.cat, q: draft.q, d: draft.d, price: price, size: draft.size, seller: 'me', img: draft.img, photo: draft.photo, note: '', fee: f.fee, promo: f.promo });
+      save(); draft = blankDraft(); toast('ลงขายแล้ว'); go('item-' + id); return;
+    }
+    if (t.hasAttribute('data-step')) {
+      v = t.getAttribute('data-step').split(':'); don[v[0]] = Math.max(0, Math.min(999, don[v[0]] + parseInt(v[1], 10)));
+      var inp = $('#dn-' + v[0]); if (inp) inp.value = don[v[0]]; updateDonate(); return;
+    }
+    if (t.hasAttribute('data-donsubmit')) {
+      var c = donCalc();
+      if (!user) { toast('กรุณาเข้าสู่ระบบก่อนยืนยันการบริจาค'); go('login'); return; }
+      if (c.pts === 0) { toast('เพิ่มจำนวนเสื้อ กางเกง หรือกระโปรงก่อน'); return; }
+      user.points += c.pts; user.donations.push({ ts: Date.now(), items: c.pts + don.other, pts: c.pts, channel: don.channel }); save();
+      don.done = { pts: c.pts }; don.shirt = don.pants = don.skirt = don.other = 0; route(true); window.scrollTo({ top: 0, behavior: 'smooth' }); return;
+    }
+    if (t.hasAttribute('data-verify')) { user.verified = true; save(); toast('ยืนยันตัวตนแล้ว (ตัวอย่าง)'); route(true); return; }
+    if (t.hasAttribute('data-delask')) { delAsk = true; route(true); return; }
+    if (t.hasAttribute('data-delno')) { delAsk = false; route(true); return; }
+    if (t.hasAttribute('data-delyes')) { delete USERS[user.email]; user = null; delAsk = false; save(); renderHeaderAuth(); toast('ลบบัญชีและข้อมูลในเบราว์เซอร์นี้แล้ว'); go('login'); return; }
   });
 
   document.addEventListener('change', function (e) {
     var t = e.target;
     if (t.matches('[data-f]')) {
-      var g = t.getAttribute('data-f'), key = g === 'cat' ? 'cats' : g === 'q' ? 'quals' : 'defs', list = state[key], v = t.value, i = list.indexOf(v);
-      if (t.checked && i < 0) list.push(v); if (!t.checked && i >= 0) list.splice(i, 1);
+      var g = t.getAttribute('data-f'), key = g === 'cat' ? 'cats' : g === 'q' ? 'quals' : 'defs', list = state[key], i = list.indexOf(t.value);
+      if (t.checked && i < 0) list.push(t.value); if (!t.checked && i >= 0) list.splice(i, 1);
       updateResults();
-    } else if (t.id === 'rentonly') { state.rentOnly = t.checked; updateResults(); }
-    else if (t.id === 'sort') { state.sort = t.value; updateResults(); }
-    else if (t.id === 'days') { itemDays = parseInt(t.value, 10); route(true); }
+    } else if (t.id === 'sort') { state.sort = t.value; updateResults(); }
+    else if (t.name === 'channel') { don.channel = t.value; }
+    else if (t.name === 'cpick') { cartOpt.coupon = t.value; route(true); }
+    else if (t.id === 'usepts') { cartOpt.usePts = t.checked; route(true); }
+    else if (t.id === 's-pts') { draft.usePts = t.checked; updateSell(); }
+    else if (t.id === 'c-mkt2') { user.consent.marketing = t.checked; save(); toast(t.checked ? 'บันทึกความยินยอมรับข่าวสารแล้ว' : 'ถอนความยินยอมรับข่าวสารแล้ว'); }
     else if (t.id === 'photo' && t.files && t.files[0]) {
       var fr = new FileReader();
-      fr.onload = function () { draft.photo = fr.result; $('#photolabel').textContent = 'เปลี่ยนรูปสินค้า'; refreshPreview(); };
+      fr.onload = function () { draft.src = 'upload'; draft.photo = fr.result; draft.img = ''; draft.analyzed = false; draft.ai = null; route(true); };
       fr.readAsDataURL(t.files[0]);
     }
   });
 
   document.addEventListener('input', function (e) {
-    var t = e.target;
+    var t = e.target, m;
     if (t.id === 'pmin') { state.min = t.value; updateResults(); }
     else if (t.id === 'pmax') { state.max = t.value; updateResults(); }
-    else if (t.hasAttribute('data-sell')) {
-      var k = t.getAttribute('data-sell');
-      draft[k] = k === 'price' ? (parseFloat(t.value) || 0) : t.value;
-      refreshPreview();
-    } else if (t.hasAttribute('data-calcin') && !t.hasAttribute('data-sell')) calcUpdate(t);
+    else if ((m = /^dn-(\w+)$/.exec(t.id))) { don[m[1]] = Math.max(0, Math.min(999, parseInt(t.value, 10) || 0)); updateDonate(); }
+    else if (t.id === 's-name') { draft.name = t.value; updateSell(); }
+    else if (t.id === 's-size') { draft.size = t.value; updateSell(); }
+    else if (t.id === 's-price') { draft.price = t.value; updateSell(); }
+    else if (t.id === 's-cat' || t.id === 's-q' || t.id === 's-d') { draft[t.id.slice(2)] = t.value; updateSell(); }
+    else if (t.hasAttribute('data-calcin')) {
+      var scope = t.closest('[data-calcroot]'), v = parseFloat(t.value); if (!isFinite(v) || v < 0) v = 0;
+      var fee = r2(v * 7 / 100); $('[data-fee]', scope).textContent = fmt(fee); $('[data-net]', scope).textContent = fmt(r2(v - fee));
+    }
+  });
+  document.addEventListener('change', function (e) {
+    var t = e.target;
+    if (t.id === 's-cat' || t.id === 's-q' || t.id === 's-d') { draft[t.id.slice(2)] = t.value; updateSell(); }
   });
 
-  $('#searchform').addEventListener('submit', function (e) {
-    e.preventDefault();
-    state.q = $('#q').value; state.cats = []; state.quals = []; state.defs = []; state.min = ''; state.max = ''; state.rentOnly = false;
-    go('shop');
+  document.addEventListener('keydown', function (e) {
+    if (!modalOpen()) return;
+    if (e.key === 'Escape') { closeModal(); return; }
+    if (e.key === 'Tab') {
+      var f = $$('button, a[href], input, select', $('#modal')).filter(function (x) { return !x.disabled; });
+      if (!f.length) return;
+      var first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
   });
 
   window.addEventListener('hashchange', function () { route(); });
-  updateBadge();
-  route();
+  renderHeaderAuth(); updateBadge(); route();
 })();
+
 </script>
 
 </html>
